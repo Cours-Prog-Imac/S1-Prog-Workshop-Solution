@@ -1,4 +1,4 @@
-# Workshop Prog Imac1
+# 🐣 S1 | Prog: Workshop (Solution)
 
 - [📅 Planning](#-planning)
   - [Lundi](#lundi)
