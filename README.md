@@ -130,6 +130,8 @@
 
 ### ⭐ Noir & Blanc
 
+N'hésitez pas à **aller chercher la formule sur internet** si besoin !
+
 
 ### ⭐⭐ Conversions RGB ⇔ HSL
 
@@ -148,7 +150,7 @@ Vous pouvez créer une image noire avec
 sil::Image image{500/*width*/, 500/*height*/};
 ```
 
-Ensuite, à vous de parcourir les pixels et les colorier ou non en fonction de si ils sont à l'intérieur du cercle.
+Ensuite, à vous de parcourir les pixels et de les colorier ou non en fonction de si ils sont à l'intérieur du cercle.
 
 ### ⭐ Dessiner un cercle
 
@@ -187,6 +189,9 @@ float const light_intensity = std::clamp(glm::dot(light_direction, normal), 0.f,
 glm::vec3 const final_color = ambient_color + light_intensity * light_color;
 ```
 
+Voici une bonne vidéo expliquant les maths dont vous aurez besoin :
+
+[![raytracing video](https://img.youtube.com/vi/4NshnkzOdI0/0.jpg)](https://www.youtube.com/watch?v=4NshnkzOdI0)
 
 ## Rendu
 
