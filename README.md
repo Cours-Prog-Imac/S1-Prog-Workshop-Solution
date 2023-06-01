@@ -174,6 +174,12 @@ Voici une bonne vidéo expliquant l'algorithme :
 
 ### ⭐⭐⭐⭐ Pixel sorting
 
+Voici une bonne vidéo expliquant l'algorithme (vous pouvez ignorer le début spécifique à Processing où on voit comment afficher l'image) :
+
+[![pixel sorting video](https://img.youtube.com/vi/JUDYkxU6J0o/0.jpg)](https://www.youtube.com/watch?v=JUDYkxU6J0o)
+
+Ensuite, au lieu de trier tous les pixels de l'image, triez par colonne (ou par ligne), pour un effet plus joli:
+
 ### ⭐⭐⭐⭐⭐ Ray Tracing
 
 A minima une sphère et un shading basique.
