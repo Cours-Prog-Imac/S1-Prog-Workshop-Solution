@@ -2,7 +2,7 @@
 
 void pixel_sorting(sil::Image& image)
 {
-    int const group_length = 100;
+    int const group_length = 101;
     for (int i = 0; i < image.pixels().size() / group_length; ++i)
     {
         float const random = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
