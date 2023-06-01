@@ -163,6 +163,7 @@ Maintenant que vous savez dessiner un cercle, dessinez-en plusieurs sur la même
 Trouvez les k couleurs les plus représentatives de l'image, puis assignez à chaque pixel la couleur dont il est le plus proche parmi les k.
 
 Voici une bonne vidéo expliquant l'algorithme :
+
 [![k-means video](https://img.youtube.com/vi/yR7k19YBqiw/0.jpg)](https://www.youtube.com/watch?v=yR7k19YBqiw)
 
 ### ⭐⭐⭐ Convolutions
