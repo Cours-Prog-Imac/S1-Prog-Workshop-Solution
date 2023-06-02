@@ -209,6 +209,8 @@ Faites un maximum de chose, et au minimum un exercice de niveau 3 ou plus (⭐�
 
 ### Rapport
 
+A faire en Markdown obligatoirement (si vous ne connaissez pas c'est l'occasion de découvrir, c'est super utile).
+
 Faite une section par exercice que vous avez fait. Montrez une image avant et après application de l'effet (comme c'est fait dans l'énoncé des exercices). Si vous jugez cela utile, vous pouvez mettre un petit texte expliquant des spécificités de l'algo que vous avez implémenté. (C'est surtout intéressant si vous avez fait des algos qui ne sont pas listés dans le sujet).
 
 ### Soutenance
