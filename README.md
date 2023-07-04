@@ -87,6 +87,7 @@
 
 #### Prof
 
+- [ ] Si besoin, point de rappel sur une notion mal acquise.
 - [ ] Passer voir les groupes, regarder l'algo avancé qu'iels ont choisi.
 
 
@@ -98,6 +99,7 @@
 
 #### Prof
 
+- [ ] Si besoin, point de rappel sur une notion mal acquise.
 - [ ] Passer voir les groupes et décider qui présente quel algo. Possibilité que plusieurs groupes se mettent ensemble pour présenter leur algo si tout le monde a envie de passer.
 
 #### Élève
