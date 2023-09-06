@@ -130,6 +130,8 @@
 
 ## 💻 Exercices
 
+Leur dire de travailler sur une image pas trop grande, pour que le rendu soit quasi-instantané.
+
 ### ⭐ Noir & Blanc
 
 N'hésitez pas à **aller chercher la formule sur internet** si besoin !
@@ -182,7 +184,9 @@ Voici une bonne vidéo expliquant l'algorithme (vous pouvez ignorer le début sp
 
 [![pixel sorting video](https://img.youtube.com/vi/JUDYkxU6J0o/0.jpg)](https://www.youtube.com/watch?v=JUDYkxU6J0o)
 
-Ensuite, au lieu de trier tous les pixels de l'image, triez par colonne (ou par ligne), pour un effet plus joli:
+Ensuite, au lieu de trier tous les pixels de l'image, triez par colonne (ou par ligne), pour un effet plus joli.
+
+Pour trier un tableau, vous pouvez utiliser [`std::sort`](https://www.geeksforgeeks.org/sort-c-stl/).
 
 ### ⭐⭐⭐⭐⭐ Ray Tracing
 
