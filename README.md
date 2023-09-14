@@ -145,6 +145,8 @@ N'hésitez pas à **aller chercher la formule sur internet** si besoin !
 
 ### ⭐ Channels swap
 
+![](output/channels_swap.png)
+
 Par exemple, échangez le canal rouge et le canal bleu.
 
 ### ⭐⭐ Conversions RGB ⇔ HSL
@@ -163,6 +165,8 @@ En elles-mêmes ces formules ne changent pas l'image, mais elles vous permettent
 
 ### ⭐⭐ Miroir
 
+![](output/miroir.png)
+
 Symétrie par rapport à l'axe Y (vertical).
 
 ### ⭐⭐ Color glitch
@@ -171,11 +175,17 @@ Remplacer quelques pixel au hasard par une couleur aléatoire.
 
 ### ⭐⭐⭐ Position glitch
 
-Prendre un carré de pixels et l'intervertir avec un autre carré de pixels, ailleurs dans l'image. Faire ça plusieurs fois.
+![](output/position_glitch.png)
+
+Prendre un rectangle de pixels et l'intervertir avec un autre rectangle de pixels, ailleurs dans l'image. Faire ça plusieurs fois.
 
 ### ⭐⭐ RGB split
 
 ![](output/rgb_split.png)
+
+⚠️ Créez une nouvelle image et travaillez sur celle-ci. Il ne faut pas modifier l'image originale pendant que vous bouclez pour appliquer l'effet, sinon certains pixels n'utiliseront pas la bonne couleur de l'image originale, mais plutôt la couleur déjà modifiée par un pixel précédent, ce qui pourrait vous donner ce genre de rendu moins intéressant :
+
+![](output/rgb_split_incorrect.png)
 
 ### ⭐⭐ Dessiner un disque
 

@@ -2,7 +2,8 @@
 
 void pixel_sorting(sil::Image& image)
 {
-    int const group_length = 101;
+    int const group_length{101};
+
     for (int i = 0; i < image.pixels().size() / group_length; ++i)
     {
         float const random = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
@@ -22,12 +23,12 @@ void pixel_sorting(sil::Image& image)
 
 void rgb_split(sil::Image& image)
 {
-    static constexpr int offset = 30;
+    int const offset{30};
 
     auto result = sil::Image{image.width(), image.height()};
-    for (int x = 0; x < result.width(); x++)
+    for (int x{0}; x < result.width(); x++)
     {
-        for (int y = 0; y < result.height(); y++)
+        for (int y{0}; y < result.height(); y++)
         {
             result.pixel(x, y) = glm::vec3{
                 image.pixel(std::max(x - offset, 0), y).r,
@@ -38,6 +39,68 @@ void rgb_split(sil::Image& image)
     }
 
     image = result;
+}
+
+void miroir(sil::Image& image)
+{
+    for (int x{0}; x < image.width() / 2; x++)
+    {
+        for (int y{0}; y < image.height(); y++)
+        {
+            std::swap(
+                image.pixel(x, y),
+                image.pixel(image.width() - 1 - x, y)
+            );
+        }
+    }
+}
+
+void channels_swap(sil::Image& image)
+{
+    static constexpr int offset = 30;
+
+    for (int x{0}; x < image.width(); x++)
+    {
+        for (int y{0}; y < image.height(); y++)
+        {
+            std::swap(
+                image.pixel(x, y).r,
+                image.pixel(x, y).b
+            );
+        }
+    }
+}
+
+int random_int(int min, int max)
+{
+    return rand() % (max - min) + min;
+}
+
+void position_glitch(sil::Image& image)
+{
+    int const nb_squares{100};
+
+    for (int i{0}; i < nb_squares; ++i)
+    {
+        int const width{random_int(1, 30)};
+        int const height{random_int(1, 10)};
+
+        int const x1{random_int(0, image.width() - 1 - width)};
+        int const x2{random_int(0, image.width() - 1 - width)};
+        int const y1{random_int(0, image.height() - 1 - height)};
+        int const y2{random_int(0, image.height() - 1 - height)};
+
+        for (int x_offset{0}; x_offset < width; ++x_offset)
+        {
+            for (int y_offset{0}; y_offset < height; ++y_offset)
+            {
+                std::swap(
+                    image.pixel(x1 + x_offset, y1 + y_offset),
+                    image.pixel(x2 + x_offset, y2 + y_offset)
+                );
+            }
+        }
+    }
 }
 
 int main()
@@ -51,5 +114,20 @@ int main()
         sil::Image image{"images/imac.png"};
         rgb_split(image);
         image.save("output/rgb_split.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
+        miroir(image);
+        image.save("output/miroir.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
+        channels_swap(image);
+        image.save("output/channels_swap.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
+        position_glitch(image);
+        image.save("output/position_glitch.png");
     }
 }
