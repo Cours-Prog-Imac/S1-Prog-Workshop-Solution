@@ -43,6 +43,8 @@
   - [⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐⭐ Flou gaussien](#-flou-gaussien)
   - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
+  - [⭐⭐⭐⭐ Flood Fill](#-flood-fill)
+  - [⭐⭐⭐⭐ Canny Edge Detection](#-canny-edge-detection)
   - [⭐⭐⭐⭐⭐ Ray Tracing](#-ray-tracing)
 - [Rendu](#rendu)
   - [Exercices à faire](#exercices-à-faire)
@@ -234,6 +236,10 @@ Voici une bonne vidéo expliquant l'algorithme (vous pouvez ignorer le début sp
 Ensuite, au lieu de trier tous les pixels de l'image, triez par colonne (ou par ligne), pour un effet plus joli.
 
 Pour trier un tableau, vous pouvez utiliser [`std::sort`](https://www.geeksforgeeks.org/sort-c-stl/).
+
+### ⭐⭐⭐⭐ Flood Fill
+
+### ⭐⭐⭐⭐ Canny Edge Detection
 
 ### ⭐⭐⭐⭐⭐ Ray Tracing
 
