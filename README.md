@@ -24,12 +24,19 @@
     - [Aprèm](#aprèm-1)
 - [💻 Exercices](#-exercices)
   - [⭐ Noir \& Blanc](#-noir--blanc)
+  - [⭐ Channels swap](#-channels-swap)
   - [⭐⭐ Conversions RGB ⇔ HSL](#-conversions-rgb--hsl)
     - [⭐ Hue shift](#-hue-shift)
     - [⭐ Désaturation](#-désaturation)
     - [⭐ Assombrissement / Éclaircissement](#-assombrissement--éclaircissement)
+  - [⭐⭐ Contraste](#-contraste)
+  - [⭐⭐ Luminosité](#-luminosité)
+  - [⭐⭐ Miroir](#-miroir)
+  - [⭐⭐ Color glitch](#-color-glitch)
+  - [⭐⭐⭐ Position glitch](#-position-glitch)
+  - [⭐⭐ RGB split](#-rgb-split)
   - [⭐⭐ Dessiner un disque](#-dessiner-un-disque)
-  - [⭐ Dessiner un cercle](#-dessiner-un-cercle)
+    - [⭐ Dessiner un cercle](#-dessiner-un-cercle)
     - [⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
   - [⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐ Convolutions](#-convolutions)
@@ -142,13 +149,33 @@ Par exemple, échangez le canal rouge et le canal bleu.
 
 ### ⭐⭐ Conversions RGB ⇔ HSL
 
-Vous pouvez reprendre les formules RGB → HSL et HSL → RGB [depuis cette page](https://www.easyrgb.com/en/math.php). Attention, iels considérent que R, G et B vont entre 0 et 255, alors que pour nous ils vont de 0 à 1. Il faudra donc légèrement adapter les formules du site.
+Vous pouvez reprendre les formules RGB → HSL et HSL → RGB [depuis cette page](https://www.easyrgb.com/en/math.php). Attention, iels considèrent que R, G et B vont entre 0 et 255, alors que pour nous ils vont de 0 à 1. Il faudra donc légèrement adapter les formules du site.
 
 En elles-mêmes ces formules ne changent pas l'image, mais elles vous permettent d'implémenter facilement les effets suivants:
 
 #### ⭐ Hue shift
 #### ⭐ Désaturation
 #### ⭐ Assombrissement / Éclaircissement
+
+### ⭐⭐ Contraste
+
+### ⭐⭐ Luminosité
+
+### ⭐⭐ Miroir
+
+Symétrie par rapport à l'axe Y (vertical).
+
+### ⭐⭐ Color glitch
+
+Remplacer quelques pixel au hasard par une couleur aléatoire.
+
+### ⭐⭐⭐ Position glitch
+
+Prendre un carré de pixels et l'intervertir avec un autre carré de pixels, ailleurs dans l'image. Faire ça plusieurs fois.
+
+### ⭐⭐ RGB split
+
+![](output/rgb_split.png)
 
 ### ⭐⭐ Dessiner un disque
 
@@ -226,4 +253,4 @@ Faite une section par exercice que vous avez fait. Montrez une image avant et ap
 
 Présentez un des algos avancés que vous avez fait, en 5 minutes. C'est de la vulgarisation, il faut que tous vos camarades puissent comprend, au moins dans les grandes lignes.
 
-> Est-ce que c'est utile ? Ca prend pas mal de temps. Mais de l'autre côté c'est un bon exercice qui force à avoir bien compris l'algo, et ça permet aux autres de voir les algos qu'iels n'ont pas implémenté. Ou sinon, je demande juste aux groupes les plus chauds de faire une prez, comme ça c'est pas trop long, et on voit juste une fois chaque algo. Et on peut prendre + de temps pour chaque prez (même pas besoin de limiter le temps, iels font comme bon leur semble).
+> Est-ce que c'est utile ? Ca prend pas mal de temps. Mais de l'autre côté c'est un bon exercice qui force à avoir bien compris l'algo, et ça permet aux autres de voir les algos qu'iels n'ont pas implémenté. Ou sinon, je demande juste aux groupes les plus chauds de faire une présentation, comme ça c'est pas trop long, et on voit juste une fois chaque algo. Et on peut prendre + de temps pour chaque présentation (même pas besoin de limiter le temps, iels font comme bon leur semble).
