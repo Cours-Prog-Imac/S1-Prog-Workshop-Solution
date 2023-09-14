@@ -42,6 +42,14 @@
   - [⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐⭐ Flou gaussien](#-flou-gaussien)
+    - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
+    - [⭐⭐⭐ Histogram Equalization](#-histogram-equalization)
+    - [⭐⭐⭐ Affichage de l'histogramme](#-affichage-de-lhistogramme)
+  - [⭐⭐ Effet Sépia](#-effet-sépia)
+  - [Feel free to implement your own effects!](#feel-free-to-implement-your-own-effects)
+  - [⭐⭐⭐⭐ Kuwahara filter](#-kuwahara-filter)
+  - [⭐⭐⭐ Color palette dithering](#-color-palette-dithering)
+  - [⭐⭐⭐ Spatial dithering](#-spatial-dithering)
   - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
   - [⭐⭐⭐⭐ Flood Fill](#-flood-fill)
   - [⭐⭐⭐⭐ Canny Edge Detection](#-canny-edge-detection)
@@ -225,6 +233,35 @@ Voici une bonne vidéo expliquant l'algorithme :
 ### ⭐⭐⭐ Convolutions
 
 #### ⭐⭐ Flou gaussien
+
+#### ⭐⭐ Difference of gaussians
+
+https://youtu.be/5EuYKEvugLU
+
+#### ⭐⭐⭐ Histogram Equalization
+
+Amélioration du contraste, en calculant la luminosité min et max, et en appliquant une transformation qui va mapper le plus sombre à 0 et le plus clair à 1.
+(PS: ne testez pas avec l'image imac, le rendu ne sera pas intéressant, prenez plutôt une photo peu contrastée (TODO: leur donner une image test))
+
+#### ⭐⭐⭐ Affichage de l'histogramme
+
+S'inspirer de Lightroom. Potentiellement split les histogrammes R, G et B
+
+### ⭐⭐ Effet Sépia
+
+### Feel free to implement your own effects!
+
+### ⭐⭐⭐⭐ Kuwahara filter
+
+https://youtu.be/LDhN-JK3U9g
+
+(Juste la version simple, qui est expliquée à 3:11, suffit. Si vous voulez aller plus loin, vous êtes les bienvenu.es bien sûr 😉)
+
+### ⭐⭐⭐ Color palette dithering
+
+https://youtu.be/8wOUe32Pt-E
+
+### ⭐⭐⭐ Spatial dithering
 
 ### ⭐⭐⭐⭐ Pixel sorting
 
