@@ -136,6 +136,9 @@ Leur dire de travailler sur une image pas trop grande, pour que le rendu soit qu
 
 N'hésitez pas à **aller chercher la formule sur internet** si besoin !
 
+### ⭐ Channels swap
+
+Par exemple, échangez le canal rouge et le canal bleu.
 
 ### ⭐⭐ Conversions RGB ⇔ HSL
 
@@ -156,7 +159,7 @@ sil::Image image{500/*width*/, 500/*height*/};
 
 Ensuite, à vous de parcourir les pixels et de les colorier ou non en fonction de si ils sont à l'intérieur du cercle.
 
-### ⭐ Dessiner un cercle
+#### ⭐ Dessiner un cercle
 
 En reprenant et modifiant légèrement votre code pour le disque, écrivez le code qui donne un cercle. (Son contour aura une épaisseur donnée `thickness`).
 
