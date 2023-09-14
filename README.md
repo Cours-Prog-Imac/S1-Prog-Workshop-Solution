@@ -45,6 +45,7 @@
   - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
   - [⭐⭐⭐⭐ Flood Fill](#-flood-fill)
   - [⭐⭐⭐⭐ Canny Edge Detection](#-canny-edge-detection)
+  - [⭐⭐ Mosaic](#-mosaic)
   - [⭐⭐⭐⭐⭐ Ray Tracing](#-ray-tracing)
 - [Rendu](#rendu)
   - [Exercices à faire](#exercices-à-faire)
@@ -240,6 +241,8 @@ Pour trier un tableau, vous pouvez utiliser [`std::sort`](https://www.geeksforge
 ### ⭐⭐⭐⭐ Flood Fill
 
 ### ⭐⭐⭐⭐ Canny Edge Detection
+
+### ⭐⭐ Mosaic
 
 ### ⭐⭐⭐⭐⭐ Ray Tracing
 
