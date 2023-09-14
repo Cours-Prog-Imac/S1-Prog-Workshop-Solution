@@ -137,7 +137,9 @@
 
 ## 💻 Exercices
 
-Leur dire de travailler sur une image pas trop grande, pour que le rendu soit quasi-instantané.
+- Leur dire de travailler sur une image pas trop grande, pour que le rendu soit quasi-instantané. (Par exemple l'image par défaut fournie dans le projet est très bien).
+- Leur dire d'afficher l'image output à côté dans VSCode pour facilement voir le résultat
+![Alt text](image.png)
 
 ### ⭐ Noir & Blanc
 
