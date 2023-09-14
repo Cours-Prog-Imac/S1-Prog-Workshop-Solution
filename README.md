@@ -34,6 +34,7 @@
   - [⭐⭐ Miroir](#-miroir)
   - [⭐⭐ Color glitch](#-color-glitch)
   - [⭐⭐⭐ Position glitch](#-position-glitch)
+  - [⭐⭐⭐ Vortex](#-vortex)
   - [⭐⭐ RGB split](#-rgb-split)
   - [⭐⭐ Dessiner un disque](#-dessiner-un-disque)
     - [⭐ Dessiner un cercle](#-dessiner-un-cercle)
@@ -180,6 +181,10 @@ Remplacer quelques pixel au hasard par une couleur aléatoire.
 ![](output/position_glitch.png)
 
 Prendre un rectangle de pixels et l'intervertir avec un autre rectangle de pixels, ailleurs dans l'image. Faire ça plusieurs fois.
+
+### ⭐⭐⭐ Vortex
+
+![](output/vortex.png)
 
 ### ⭐⭐ RGB split
 
