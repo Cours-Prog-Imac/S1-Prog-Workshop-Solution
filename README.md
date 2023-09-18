@@ -51,6 +51,7 @@
   - [⭐⭐⭐ Color palette dithering](#-color-palette-dithering)
   - [⭐⭐⭐ Spatial dithering](#-spatial-dithering)
   - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
+  - [⭐⭐⭐⭐ Diamond Square](#-diamond-square)
   - [⭐⭐⭐⭐ Flood Fill](#-flood-fill)
   - [⭐⭐⭐⭐ Canny Edge Detection](#-canny-edge-detection)
   - [⭐⭐ Mosaic](#-mosaic)
@@ -274,6 +275,10 @@ Voici une bonne vidéo expliquant l'algorithme (vous pouvez ignorer le début sp
 Ensuite, au lieu de trier tous les pixels de l'image, triez par colonne (ou par ligne), pour un effet plus joli.
 
 Pour trier un tableau, vous pouvez utiliser [`std::sort`](https://www.geeksforgeeks.org/sort-c-stl/).
+
+### ⭐⭐⭐⭐ Diamond Square
+
+https://youtu.be/4GuAV1PnurU
 
 ### ⭐⭐⭐⭐ Flood Fill
 
