@@ -39,6 +39,7 @@
   - [⭐⭐ Dessiner un disque](#-dessiner-un-disque)
     - [⭐ Dessiner un cercle](#-dessiner-un-cercle)
     - [⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
+  - [⭐⭐⭐ Dessiner la fractale de Mandelbrot](#-dessiner-la-fractale-de-mandelbrot)
   - [⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐⭐ Flou gaussien](#-flou-gaussien)
@@ -222,6 +223,10 @@ En reprenant et modifiant légèrement votre code pour le disque, écrivez le co
 #### ⭐⭐ Dessiner une rosace
 
 Maintenant que vous savez dessiner un cercle, dessinez-en plusieurs sur la même image, à des positions différentes, de sorte à dessiner une rosace.
+
+### ⭐⭐⭐ Dessiner la fractale de Mandelbrot
+
+
 
 ### ⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image
 
