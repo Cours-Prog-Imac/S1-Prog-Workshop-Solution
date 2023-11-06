@@ -38,7 +38,7 @@
   - [⭐⭐ RGB split](#-rgb-split)
   - [⭐⭐ Dessiner un disque](#-dessiner-un-disque)
     - [⭐ Dessiner un cercle](#-dessiner-un-cercle)
-    - [⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
+    - [⭐⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
     - [⭐⭐ Dessiner des courbes paramétriques](#-dessiner-des-courbes-paramétriques)
   - [⭐⭐⭐ Dessiner la fractale de Mandelbrot](#-dessiner-la-fractale-de-mandelbrot)
   - [⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
@@ -143,7 +143,7 @@
 ##### Élève
 
 - [ ] Écriture du rapport. (Vous avez jusqu'à lundi matin pour les rendre).
-- [ ] Préparation de la présentation pour celleux concerné.e.s
+- [ ] Préparation de la présentation pour celleux concerné.es
 
 #### Aprèm
 
@@ -152,7 +152,7 @@
 
 ## 💻 Exercices
 
-- Leur dire de travailler sur une image pas trop grande, pour que le rendu soit quasi-instantané. (Par exemple l'image par défaut fournie dans le projet est très bien).
+- Leur dire de travailler sur une image pas trop grande, pour que le rendu soit quasi-instantané. (Par exemple l'image par défaut fournie dans le projet est très bien. Mais il faut leur fournir aussi une photo, certains effets ne marchent pas bien sur une image en flat design).
 - Leur dire d'afficher l'image output à côté dans VSCode pour facilement voir le résultat
 ![Alt text](image.png)
 
@@ -215,15 +215,15 @@ Vous pouvez créer une image noire avec
 sil::Image image{500/*width*/, 500/*height*/};
 ```
 
-Ensuite, à vous de parcourir les pixels et de les colorier ou non en fonction de si ils sont à l'intérieur du cercle.
+Ensuite, à vous de parcourir les pixels et de les colorier ou non en fonction de si ils sont à l'intérieur du disque. La fonction prendra en paramètre le centre et le rayon du disque.
 
 #### ⭐ Dessiner un cercle
 
 En reprenant et modifiant légèrement votre code pour le disque, écrivez le code qui donne un cercle. (Son contour aura une épaisseur donnée `thickness`).
 
-#### ⭐⭐ Dessiner une rosace
+#### ⭐⭐⭐ Dessiner une rosace
 
-Maintenant que vous savez dessiner un cercle, dessinez-en plusieurs sur la même image, à des positions différentes, de sorte à dessiner une rosace.
+Maintenant que vous savez dessiner un cercle, dessinez-en plusieurs sur la même image, à des positions bien choisies, de sorte à dessiner une rosace.
 
 #### ⭐⭐ Dessiner des courbes paramétriques
 
@@ -319,7 +319,7 @@ Voici une bonne vidéo expliquant les maths dont vous aurez besoin :
 
 ### Exercices à faire
 
-Faites un maximum de chose, et au minimum un exercice de niveau 3 ou plus (⭐⭐⭐).
+Faites un maximum de chose, et au minimum un exercice de niveau 3 ou plus (⭐⭐⭐). Vous êtes aussi les bienvenu.es pour inventer vos propres effets !
 
 ### Rapport
 
@@ -329,6 +329,6 @@ Faite une section par exercice que vous avez fait. Montrez une image avant et ap
 
 ### Soutenance
 
-Présentez un des algos avancés que vous avez fait, en 5 minutes. C'est de la vulgarisation, il faut que tous vos camarades puissent comprend, au moins dans les grandes lignes.
+Présentez un des algos avancés que vous avez fait, en 5 minutes. C'est de la vulgarisation, il faut que tous vos camarades puissent comprendre, au moins dans les grandes lignes.
 
 > Est-ce que c'est utile ? Ca prend pas mal de temps. Mais de l'autre côté c'est un bon exercice qui force à avoir bien compris l'algo, et ça permet aux autres de voir les algos qu'iels n'ont pas implémenté. Ou sinon, je demande juste aux groupes les plus chauds de faire une présentation, comme ça c'est pas trop long, et on voit juste une fois chaque algo. Et on peut prendre + de temps pour chaque présentation (même pas besoin de limiter le temps, iels font comme bon leur semble).
