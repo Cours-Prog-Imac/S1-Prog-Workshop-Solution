@@ -2,6 +2,18 @@
 #include <sil/sil.hpp>
 #include "glm/gtx/matrix_transform_2d.hpp"
 
+void keep_green_only(sil::Image& image)
+{
+    for (int x{0}; x < image.width(); x++)
+    {
+        for (int y{0}; y < image.height(); y++)
+        {
+            image.pixel(x, y).r = 0.f;
+            image.pixel(x, y).b = 0.f;
+        }
+    }
+}
+
 void black_and_white(sil::Image& image)
 {
     for (int x{0}; x < image.width(); x++)
@@ -12,6 +24,99 @@ void black_and_white(sil::Image& image)
             float const     grey  = 0.299f * color.r + 0.587f * color.g + 0.114f * color.b;
             image.pixel(x, y)     = glm::vec3{grey, grey, grey};
         }
+    }
+}
+
+sil::Image mosaic(sil::Image const& image)
+{
+    sil::Image result{image.width() * 5, image.height() * 5};
+    for (int x{0}; x < result.width(); x++)
+    {
+        for (int y{0}; y < result.height(); y++)
+        {
+            result.pixel(x, y) = image.pixel(
+                x % image.width(),
+                y % image.height()
+            );
+        }
+    }
+    return result;
+}
+
+static int flip_at_middle(int x, int middle)
+{
+    if (x >= middle)
+        x = 2 * middle - x - 1;
+    return x;
+}
+
+sil::Image mosaic_flip(sil::Image const& image)
+{
+    sil::Image result{image.width() * 5, image.height() * 5};
+    for (int x{0}; x < result.width(); x++)
+    {
+        for (int y{0}; y < result.height(); y++)
+        {
+            result.pixel(x, y) = image.pixel(
+                flip_at_middle(x % (2 * image.width()), image.width()),
+                flip_at_middle(y % (2 * image.height()), image.height())
+            );
+        }
+    }
+    return result;
+}
+
+void disk(sil::Image& image, glm::vec2 center, float radius)
+{
+    for (int x{0}; x < image.width(); x++)
+    {
+        for (int y{0}; y < image.height(); y++)
+        {
+            glm::vec2 position{x, y};
+            if (glm::distance(position, center) < radius)
+                image.pixel(x, y) = glm::vec3{1.f};
+        }
+    }
+}
+
+void circle(sil::Image& image, glm::vec2 center, float radius, float thickness)
+{
+    for (int x{0}; x < image.width(); x++)
+    {
+        for (int y{0}; y < image.height(); y++)
+        {
+            glm::vec2   position{x, y};
+            float const distance{glm::distance(position, center)};
+            if (
+                distance < radius + thickness / 2.f &&
+                distance > radius - thickness / 2.f
+            )
+            {
+                image.pixel(x, y) = glm::vec3{1.f};
+            }
+        }
+    }
+}
+
+glm::vec2 from_polar_coordinates(float length, float angle_in_radians)
+{
+    return length * glm::vec2{
+                        std::cos(angle_in_radians),
+                        std::sin(angle_in_radians),
+                    };
+}
+
+static constexpr float TAU = 6.28f;
+
+void rosace(sil::Image& image, float radius, float thickness)
+{
+    glm::vec2 const center{image.width() / 2.f, image.height() / 2.f};
+    circle(image, center, radius, thickness);
+
+    for (int i = 0; i < 6; ++i)
+    {
+        glm::vec2 const outer_center{center + from_polar_coordinates(radius, i * TAU / 6.f)};
+        circle(image, outer_center, radius, thickness);
     }
 }
 
@@ -35,14 +140,14 @@ void pixel_sorting(sil::Image& image)
 
     for (int i = 0; i < image.pixels().size() / group_length; ++i)
     {
-        float const random = static_cast<float>(rand()) / static_cast<float>(RAND_MAX);
+        float const random{static_cast<float>(rand()) / static_cast<float>(RAND_MAX)};
         if (random < 0.7f)
             continue;
-        int const begin = i * group_length;
-        int const end   = std::min(
+        int const begin{i * group_length};
+        int const end{std::min(
             (i + 1) * group_length,
             static_cast<int>(image.pixels().size())
-        );
+        )};
         std::sort(image.pixels().begin() + begin, image.pixels().begin() + end, [](glm::vec3 col1, glm::vec3 col2) {
             glm::vec3 const channel_brightness{1.f / 3.f};
             return glm::dot(col1, channel_brightness) < glm::dot(col2, channel_brightness);
@@ -54,7 +159,7 @@ void rgb_split(sil::Image& image)
 {
     int const offset{30};
 
-    auto result = sil::Image{image.width(), image.height()};
+    sil::Image result{image.width(), image.height()};
     for (int x{0}; x < result.width(); x++)
     {
         for (int y{0}; y < result.height(); y++)
@@ -70,7 +175,7 @@ void rgb_split(sil::Image& image)
     image = result;
 }
 
-void miroir(sil::Image& image)
+void mirror(sil::Image& image)
 {
     for (int x{0}; x < image.width() / 2; x++)
     {
@@ -140,6 +245,11 @@ int main()
 {
     {
         sil::Image image{"images/imac.png"};
+        keep_green_only(image);
+        image.save("output/keep_green_only.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
         black_and_white(image);
         image.save("output/black_and_white.png");
     }
@@ -147,6 +257,31 @@ int main()
         sil::Image image{"images/imac.png"};
         channels_swap(image);
         image.save("output/channels_swap.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
+        image = mosaic(image);
+        image.save("output/mosaic.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
+        image = mosaic_flip(image);
+        image.save("output/mosaic_flip.png");
+    }
+    {
+        sil::Image image{500, 500};
+        disk(image, {250.f, 250.f}, 100.f);
+        image.save("output/disk.png");
+    }
+    {
+        sil::Image image{500, 500};
+        circle(image, {250.f, 250.f}, 100.f, 10.f);
+        image.save("output/circle.png");
+    }
+    {
+        sil::Image image{500, 500};
+        rosace(image, 100.f, 5.f);
+        image.save("output/rosace.png");
     }
     {
         sil::Image image{"images/imac.png"};
@@ -160,8 +295,8 @@ int main()
     }
     {
         sil::Image image{"images/imac.png"};
-        miroir(image);
-        image.save("output/miroir.png");
+        mirror(image);
+        image.save("output/mirror.png");
     }
     {
         sil::Image image{"images/imac.png"};

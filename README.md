@@ -23,9 +23,10 @@
       - [Élève](#élève-5)
     - [Aprèm](#aprèm-1)
 - [💻 Exercices](#-exercices)
+  - [⭐ Ne garder que le vert](#-ne-garder-que-le-vert)
   - [⭐ Noir \& Blanc](#-noir--blanc)
   - [⭐ Channels swap](#-channels-swap)
-  - [⭐⭐ Conversions RGB ⇔ HSL](#-conversions-rgb--hsl)
+  - [⭐⭐(⭐) Conversions RGB ⇔ HSL](#-conversions-rgb--hsl)
     - [⭐ Hue shift](#-hue-shift)
     - [⭐ Désaturation](#-désaturation)
     - [⭐ Assombrissement / Éclaircissement](#-assombrissement--éclaircissement)
@@ -56,7 +57,7 @@
   - [⭐⭐⭐⭐ Diamond Square](#-diamond-square)
   - [⭐⭐⭐⭐ Flood Fill](#-flood-fill)
   - [⭐⭐⭐⭐ Canny Edge Detection](#-canny-edge-detection)
-  - [⭐⭐ Mosaic](#-mosaic)
+  - [⭐⭐(⭐) Mosaic](#-mosaic)
   - [⭐⭐⭐⭐⭐ Ray Tracing](#-ray-tracing)
 - [Rendu](#rendu)
   - [Exercices à faire](#exercices-à-faire)
@@ -156,6 +157,12 @@
 - Leur dire d'afficher l'image output à côté dans VSCode pour facilement voir le résultat
 ![Alt text](image.png)
 
+### ⭐ Ne garder que le vert
+
+![](output/keep_green_only.png)
+
+Mettre le rouge et le bleu à 0.
+
 ### ⭐ Noir & Blanc
 
 ![](output/black_and_white.png)
@@ -168,7 +175,7 @@ N'hésitez pas à **aller chercher la formule sur internet** si besoin !
 
 Par exemple, échangez le canal rouge et le canal bleu.
 
-### ⭐⭐ Conversions RGB ⇔ HSL
+### ⭐⭐(⭐) Conversions RGB ⇔ HSL
 
 Vous pouvez reprendre les formules RGB → HSL et HSL → RGB [depuis cette page](https://www.easyrgb.com/en/math.php). Attention, iels considèrent que R, G et B vont entre 0 et 255, alors que pour nous ils vont de 0 à 1. Il faudra donc légèrement adapter les formules du site.
 
@@ -184,7 +191,7 @@ En elles-mêmes ces formules ne changent pas l'image, mais elles vous permettent
 
 ### ⭐⭐ Miroir
 
-![](output/miroir.png)
+![](output/mirror.png)
 
 Symétrie par rapport à l'axe Y (vertical).
 
@@ -212,6 +219,8 @@ Prendre un rectangle de pixels et l'intervertir avec un autre rectangle de pixel
 
 ### ⭐⭐ Dessiner un disque
 
+![](output/disk.png)
+
 Vous pouvez créer une image noire avec
 ```cpp
 sil::Image image{500/*width*/, 500/*height*/};
@@ -221,11 +230,16 @@ Ensuite, à vous de parcourir les pixels et de les colorier ou non en fonction d
 
 #### ⭐ Dessiner un cercle
 
+![](output/circle.png)
+
 En reprenant et modifiant légèrement votre code pour le disque, écrivez le code qui donne un cercle. (Son contour aura une épaisseur donnée `thickness`).
 
 #### ⭐⭐⭐ Dessiner une rosace
 
+![](output/rosace.png)
+
 Maintenant que vous savez dessiner un cercle, dessinez-en plusieurs sur la même image, à des positions bien choisies, de sorte à dessiner une rosace.
+(PS: il va surement falloir faire de la trigo!)
 
 #### ⭐⭐ Dessiner des courbes paramétriques
 
@@ -296,7 +310,13 @@ https://youtu.be/4GuAV1PnurU
 
 ### ⭐⭐⭐⭐ Canny Edge Detection
 
-### ⭐⭐ Mosaic
+### ⭐⭐(⭐) Mosaic
+
+![](output/mosaic.png)
+
+BONUS ⭐⭐⭐: flip every other image:
+
+![](output/mosaic_flip.png)
 
 ### ⭐⭐⭐⭐⭐ Ray Tracing
 
