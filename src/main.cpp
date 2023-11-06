@@ -2,6 +2,33 @@
 #include <sil/sil.hpp>
 #include "glm/gtx/matrix_transform_2d.hpp"
 
+void black_and_white(sil::Image& image)
+{
+    for (int x{0}; x < image.width(); x++)
+    {
+        for (int y{0}; y < image.height(); y++)
+        {
+            glm::vec3 const color = image.pixel(x, y);
+            float const     grey  = 0.299f * color.r + 0.587f * color.g + 0.114f * color.b;
+            image.pixel(x, y)     = glm::vec3{grey, grey, grey};
+        }
+    }
+}
+
+void channels_swap(sil::Image& image)
+{
+    for (int x{0}; x < image.width(); x++)
+    {
+        for (int y{0}; y < image.height(); y++)
+        {
+            std::swap(
+                image.pixel(x, y).r,
+                image.pixel(x, y).b
+            );
+        }
+    }
+}
+
 void pixel_sorting(sil::Image& image)
 {
     int const group_length{101};
@@ -52,22 +79,6 @@ void miroir(sil::Image& image)
             std::swap(
                 image.pixel(x, y),
                 image.pixel(image.width() - 1 - x, y)
-            );
-        }
-    }
-}
-
-void channels_swap(sil::Image& image)
-{
-    static constexpr int offset = 30;
-
-    for (int x{0}; x < image.width(); x++)
-    {
-        for (int y{0}; y < image.height(); y++)
-        {
-            std::swap(
-                image.pixel(x, y).r,
-                image.pixel(x, y).b
             );
         }
     }
@@ -129,6 +140,16 @@ int main()
 {
     {
         sil::Image image{"images/imac.png"};
+        black_and_white(image);
+        image.save("output/black_and_white.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
+        channels_swap(image);
+        image.save("output/channels_swap.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
         pixel_sorting(image);
         image.save("output/pixel_sorting.png");
     }
@@ -141,11 +162,6 @@ int main()
         sil::Image image{"images/imac.png"};
         miroir(image);
         image.save("output/miroir.png");
-    }
-    {
-        sil::Image image{"images/imac.png"};
-        channels_swap(image);
-        image.save("output/channels_swap.png");
     }
     {
         sil::Image image{"images/imac.png"};

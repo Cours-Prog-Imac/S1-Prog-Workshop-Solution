@@ -158,6 +158,8 @@
 
 ### ⭐ Noir & Blanc
 
+![](output/black_and_white.png)
+
 N'hésitez pas à **aller chercher la formule sur internet** si besoin !
 
 ### ⭐ Channels swap
