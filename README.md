@@ -22,6 +22,11 @@
       - [Prof](#prof-5)
       - [Élève](#élève-5)
     - [Aprèm](#aprèm-1)
+- [📝 Sujet](#-sujet)
+  - [Exercices à faire](#exercices-à-faire)
+  - [Rapport](#rapport)
+  - [Soutenance](#soutenance)
+  - [Détails techniques](#détails-techniques)
 - [💻 Exercices](#-exercices)
   - [⭐ Ne garder que le vert](#-ne-garder-que-le-vert)
   - [⭐ Noir \& Blanc](#-noir--blanc)
@@ -45,9 +50,9 @@
   - [⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐⭐ Flou gaussien](#-flou-gaussien)
-    - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
-    - [⭐⭐⭐ Histogram Equalization](#-histogram-equalization)
-    - [⭐⭐⭐ Affichage de l'histogramme](#-affichage-de-lhistogramme)
+      - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
+  - [⭐⭐⭐ Histogram Equalization](#-histogram-equalization)
+  - [⭐⭐⭐ Affichage de l'histogramme](#-affichage-de-lhistogramme)
   - [⭐⭐ Effet Sépia](#-effet-sépia)
   - [Feel free to implement your own effects!](#feel-free-to-implement-your-own-effects)
   - [⭐⭐⭐⭐ Kuwahara filter](#-kuwahara-filter)
@@ -59,10 +64,6 @@
   - [⭐⭐⭐⭐ Canny Edge Detection](#-canny-edge-detection)
   - [⭐⭐(⭐) Mosaic](#-mosaic)
   - [⭐⭐⭐⭐⭐ Ray Tracing](#-ray-tracing)
-- [Rendu](#rendu)
-  - [Exercices à faire](#exercices-à-faire)
-  - [Rapport](#rapport)
-  - [Soutenance](#soutenance)
 
 
 ## 📅 Planning
@@ -151,6 +152,30 @@
 - [ ] Présentations
 
 
+## 📝 Sujet
+
+### Exercices à faire
+
+Faites un maximum de chose, et au minimum un exercice de niveau 3 ou plus (⭐⭐⭐). Vous êtes aussi les bienvenu.es pour inventer vos propres effets !
+
+### Rapport
+
+A faire en Markdown obligatoirement (si vous ne connaissez pas c'est l'occasion de découvrir, c'est super utile).
+
+A mettre directement en tant que readme à la racine du repo.
+
+Faite une section par exercice que vous avez fait. Montrez une image avant et après application de l'effet (comme c'est fait dans l'énoncé des exercices). Si vous jugez cela utile, vous pouvez mettre un petit texte expliquant des spécificités de l'algo que vous avez implémenté. (C'est surtout intéressant si vous avez fait des algos qui ne sont pas listés dans le sujet, et pour votre algo 3+).
+
+### Soutenance
+
+Présentez un des algos avancés que vous avez fait, en 5 minutes. C'est de la vulgarisation, il faut que tous vos camarades puissent comprendre, au moins dans les grandes lignes.
+
+> Est-ce que c'est utile ? Ca prend pas mal de temps. Mais de l'autre côté c'est un bon exercice qui force à avoir bien compris l'algo, et ça permet aux autres de voir les algos qu'iels n'ont pas implémenté. Ou sinon, je demande juste aux groupes les plus chauds de faire une présentation, comme ça c'est pas trop long, et on voit juste une fois chaque algo. Et on peut prendre + de temps pour chaque présentation (même pas besoin de limiter le temps, iels font comme bon leur semble).
+
+### Détails techniques
+
+Nous utiliserons la librairie *sil* pour lire, éditer et re-sauvegarder les images. Elle est très simple à utiliser et n'expose que le minimum nécessaire. Vous pouvez trouver sa documentation [sur GitHub](https://github.com/JulesFouchy/Simple-Image-Lib/tree/main#usage).
+
 ## 💻 Exercices
 
 - Leur dire de travailler sur une image pas trop grande, pour que le rendu soit quasi-instantané. (Par exemple l'image par défaut fournie dans le projet est très bien. Mais il faut leur fournir aussi une photo, certains effets ne marchent pas bien sur une image en flat design).
@@ -161,7 +186,9 @@
 
 ![](output/keep_green_only.png)
 
+<details><summary>Indice</summary>
 Mettre le rouge et le bleu à 0.
+</details>
 
 ### ⭐ Noir & Blanc
 
@@ -203,11 +230,17 @@ Remplacer quelques pixel au hasard par une couleur aléatoire.
 
 ![](output/position_glitch.png)
 
+<details><summary>Indice</summary>
 Prendre un rectangle de pixels et l'intervertir avec un autre rectangle de pixels, ailleurs dans l'image. Faire ça plusieurs fois.
+</details>
 
 ### ⭐⭐⭐ Vortex
 
 ![](output/vortex.png)
+
+<details><summary>Indice</summary>
+Chaque pixel subit une rotation, de plus en plus importante au fur et à mesure qu'on s'éloigne du centre.
+</details>
 
 ### ⭐⭐ RGB split
 
@@ -226,7 +259,9 @@ Vous pouvez créer une image noire avec
 sil::Image image{500/*width*/, 500/*height*/};
 ```
 
+<details><summary>Indice</summary>
 Ensuite, à vous de parcourir les pixels et de les colorier ou non en fonction de si ils sont à l'intérieur du disque. La fonction prendra en paramètre le centre et le rayon du disque.
+</details>
 
 #### ⭐ Dessiner un cercle
 
@@ -261,16 +296,16 @@ Voici une bonne vidéo expliquant l'algorithme :
 
 #### ⭐⭐ Flou gaussien
 
-#### ⭐⭐ Difference of gaussians
+##### ⭐⭐ Difference of gaussians
 
 https://youtu.be/5EuYKEvugLU
 
-#### ⭐⭐⭐ Histogram Equalization
+### ⭐⭐⭐ Histogram Equalization
 
 Amélioration du contraste, en calculant la luminosité min et max, et en appliquant une transformation qui va mapper le plus sombre à 0 et le plus clair à 1.
 (PS: ne testez pas avec l'image imac, le rendu ne sera pas intéressant, prenez plutôt une photo peu contrastée (TODO: leur donner une image test))
 
-#### ⭐⭐⭐ Affichage de l'histogramme
+### ⭐⭐⭐ Affichage de l'histogramme
 
 S'inspirer de Lightroom. Potentiellement split les histogrammes R, G et B
 
@@ -314,6 +349,10 @@ https://youtu.be/4GuAV1PnurU
 
 ![](output/mosaic.png)
 
+<details><summary>Indice</summary>
+You can use a modulo (`%`) somewhere.
+</details>
+
 BONUS ⭐⭐⭐: flip every other image:
 
 ![](output/mosaic_flip.png)
@@ -336,21 +375,3 @@ glm::vec3 const final_color = ambient_color + light_intensity * light_color;
 Voici une bonne vidéo expliquant les maths dont vous aurez besoin :
 
 [![raytracing video](https://img.youtube.com/vi/4NshnkzOdI0/0.jpg)](https://www.youtube.com/watch?v=4NshnkzOdI0)
-
-## Rendu
-
-### Exercices à faire
-
-Faites un maximum de chose, et au minimum un exercice de niveau 3 ou plus (⭐⭐⭐). Vous êtes aussi les bienvenu.es pour inventer vos propres effets !
-
-### Rapport
-
-A faire en Markdown obligatoirement (si vous ne connaissez pas c'est l'occasion de découvrir, c'est super utile).
-
-Faite une section par exercice que vous avez fait. Montrez une image avant et après application de l'effet (comme c'est fait dans l'énoncé des exercices). Si vous jugez cela utile, vous pouvez mettre un petit texte expliquant des spécificités de l'algo que vous avez implémenté. (C'est surtout intéressant si vous avez fait des algos qui ne sont pas listés dans le sujet).
-
-### Soutenance
-
-Présentez un des algos avancés que vous avez fait, en 5 minutes. C'est de la vulgarisation, il faut que tous vos camarades puissent comprendre, au moins dans les grandes lignes.
-
-> Est-ce que c'est utile ? Ca prend pas mal de temps. Mais de l'autre côté c'est un bon exercice qui force à avoir bien compris l'algo, et ça permet aux autres de voir les algos qu'iels n'ont pas implémenté. Ou sinon, je demande juste aux groupes les plus chauds de faire une présentation, comme ça c'est pas trop long, et on voit juste une fois chaque algo. Et on peut prendre + de temps pour chaque présentation (même pas besoin de limiter le temps, iels font comme bon leur semble).
