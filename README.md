@@ -282,7 +282,11 @@ Dessiner plein de disques à différents points de la courbe.
 
 ### ⭐⭐⭐ Dessiner la fractale de Mandelbrot
 
+![](output/mandelbrot.png)
 
+<details><summary>Indice</summary>
+Définir un nombre max d'itérations, itérer `z <- z * z + c` jusqu'à ce qu'on dépasse ce nombre d'itérations ou que la norme de z soit > 2, puis assigner une couleur en fonction du nombre d'itérations qu'on a fait avant de sortir de la boucle.
+</details>
 
 ### ⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image
 
@@ -300,10 +304,16 @@ Voici une bonne vidéo expliquant l'algorithme :
 
 https://youtu.be/5EuYKEvugLU
 
+Ne faire que le début ça suffit, jusqu'à 4m09.
+
 ### ⭐⭐⭐ Histogram Equalization
 
+| ![](images/photo_faible_contraste.jpg)  | ![](output/normalize_histogram.png)  |
+|---|----|
+| Avant | Après |
+
 Amélioration du contraste, en calculant la luminosité min et max, et en appliquant une transformation qui va mapper le plus sombre à 0 et le plus clair à 1.
-(PS: ne testez pas avec l'image imac, le rendu ne sera pas intéressant, prenez plutôt une photo peu contrastée (TODO: leur donner une image test))
+(PS: testez avec l'image "images/photo_faible_contraste.jpg", vous verrez bien l'intérêt de l'effet.)
 
 ### ⭐⭐⭐ Affichage de l'histogramme
 
