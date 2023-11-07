@@ -48,7 +48,7 @@
     - [⭐⭐ Dessiner des courbes paramétriques](#-dessiner-des-courbes-paramétriques)
   - [⭐⭐⭐ Dessiner la fractale de Mandelbrot](#-dessiner-la-fractale-de-mandelbrot)
   - [⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
-  - [⭐⭐⭐ Convolutions](#-convolutions)
+  - [⭐⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐⭐ Flou gaussien](#-flou-gaussien)
       - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
   - [⭐⭐⭐ Histogram Equalization](#-histogram-equalization)
@@ -296,7 +296,10 @@ Voici une bonne vidéo expliquant l'algorithme :
 
 [![k-means video](https://img.youtube.com/vi/yR7k19YBqiw/0.jpg)](https://www.youtube.com/watch?v=yR7k19YBqiw)
 
-### ⭐⭐⭐ Convolutions
+### ⭐⭐⭐⭐ Convolutions
+
+![](output/box_blur.png)
+Box blur
 
 #### ⭐⭐ Flou gaussien
 

@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <complex>
 #include <sil/sil.hpp>
+#include "convolution.hpp"
 #include "glm/gtx/matrix_transform_2d.hpp"
 #include "normalize_histogram.hpp"
 
@@ -324,6 +325,11 @@ int main()
         sil::Image image{"images/photo_faible_contraste.jpg"};
         normalize_histogram(image);
         image.save("output/normalize_histogram.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
+        box_blur(image, 20);
+        image.save("output/box_blur.png");
     }
     {
         sil::Image image{"images/imac.png"};
