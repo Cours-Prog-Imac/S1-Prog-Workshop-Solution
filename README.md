@@ -31,6 +31,7 @@
   - [⭐ Ne garder que le vert](#-ne-garder-que-le-vert)
   - [⭐ Noir \& Blanc](#-noir--blanc)
   - [⭐ Channels swap](#-channels-swap)
+  - [⭐ Négatif](#-négatif)
   - [⭐⭐(⭐) Conversions RGB ⇔ HSL](#-conversions-rgb--hsl)
     - [⭐ Hue shift](#-hue-shift)
     - [⭐ Désaturation](#-désaturation)
@@ -38,6 +39,7 @@
   - [⭐⭐ Contraste](#-contraste)
   - [⭐⭐ Luminosité](#-luminosité)
   - [⭐⭐ Miroir](#-miroir)
+  - [⭐⭐ Rotation de 90°](#-rotation-de-90)
   - [⭐⭐ Color glitch](#-color-glitch)
   - [⭐⭐⭐ Position glitch](#-position-glitch)
   - [⭐⭐⭐ Vortex](#-vortex)
@@ -50,6 +52,7 @@
   - [⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐⭐ Flou gaussien](#-flou-gaussien)
+    - [⭐⭐ Separable filter](#-separable-filter)
       - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
   - [⭐⭐⭐ Histogram Equalization](#-histogram-equalization)
   - [⭐⭐⭐ Affichage de l'histogramme](#-affichage-de-lhistogramme)
@@ -202,6 +205,10 @@ N'hésitez pas à **aller chercher la formule sur internet** si besoin !
 
 Par exemple, échangez le canal rouge et le canal bleu.
 
+### ⭐ Négatif
+
+![](output/negative.png)
+
 ### ⭐⭐(⭐) Conversions RGB ⇔ HSL
 
 Vous pouvez reprendre les formules RGB → HSL et HSL → RGB [depuis cette page](https://www.easyrgb.com/en/math.php). Attention, iels considèrent que R, G et B vont entre 0 et 255, alors que pour nous ils vont de 0 à 1. Il faudra donc légèrement adapter les formules du site.
@@ -221,6 +228,12 @@ En elles-mêmes ces formules ne changent pas l'image, mais elles vous permettent
 ![](output/mirror.png)
 
 Symétrie par rapport à l'axe Y (vertical).
+
+### ⭐⭐ Rotation de 90°
+
+![](output/rotate_90_degrees.png)
+
+La formule générique pour un angle quelconque est un peu plus compliquée, mais pour 90° il y a une formule vraiment simple, essayez de la trouver !
 
 ### ⭐⭐ Color glitch
 
@@ -302,6 +315,10 @@ Voici une bonne vidéo expliquant l'algorithme :
 Box blur
 
 #### ⭐⭐ Flou gaussien
+
+#### ⭐⭐ Separable filter
+
+https://youtu.be/SiJpkucGa1o
 
 ##### ⭐⭐ Difference of gaussians
 

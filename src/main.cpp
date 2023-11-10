@@ -137,6 +137,17 @@ void channels_swap(sil::Image& image)
     }
 }
 
+void negative(sil::Image& image)
+{
+    for (int x{0}; x < image.width(); x++)
+    {
+        for (int y{0}; y < image.height(); y++)
+        {
+            image.pixel(x, y) = 1.f - image.pixel(x, y);
+        }
+    }
+}
+
 void pixel_sorting(sil::Image& image)
 {
     int const group_length{101};
@@ -190,6 +201,19 @@ void mirror(sil::Image& image)
             );
         }
     }
+}
+
+sil::Image rotate_90_degrees(sil::Image const& image)
+{
+    sil::Image result{image.height(), image.width()};
+    for (int x{0}; x < result.width(); x++)
+    {
+        for (int y{0}; y < result.height(); y++)
+        {
+            result.pixel(x, y) = image.pixel(y, image.height() - 1 - x);
+        }
+    }
+    return result;
 }
 
 sil::Image mandelbrot()
@@ -289,6 +313,11 @@ int main()
     }
     {
         sil::Image image{"images/imac.png"};
+        negative(image);
+        image.save("output/negative.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
         image = mosaic(image);
         image.save("output/mosaic.png");
     }
@@ -340,6 +369,11 @@ int main()
         sil::Image image{"images/imac.png"};
         mirror(image);
         image.save("output/mirror.png");
+    }
+    {
+        sil::Image image{"images/imac.png"};
+        image = rotate_90_degrees(image);
+        image.save("output/rotate_90_degrees.png");
     }
     {
         sil::Image image{"images/imac.png"};
