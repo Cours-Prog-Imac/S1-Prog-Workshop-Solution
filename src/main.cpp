@@ -242,6 +242,17 @@ sil::Image mandelbrot()
     return image;
 }
 
+void luminosity(sil::Image& image, float luminosity)
+{
+    for (int x{0}; x < image.width(); x++)
+    {
+        for (int y{0}; y < image.height(); y++)
+        {
+            image.pixel(x, y) = glm::pow(image.pixel(x, y), glm::vec3{luminosity});
+        }
+    }
+}
+
 int random_int(int min, int max)
 {
     return rand() % (max - min) + min;
@@ -346,6 +357,16 @@ int main()
         image.save("output/mandelbrot.png");
     }
     {
+        sil::Image image{"images/photo.jpg"};
+        luminosity(image, 1.f / 1.25f);
+        image.save("output/luminosity+.jpg");
+    }
+    {
+        sil::Image image{"images/photo.jpg"};
+        luminosity(image, 1.25f);
+        image.save("output/luminosity-.jpg");
+    }
+    {
         sil::Image image{"images/imac.png"};
         pixel_sorting(image);
         image.save("output/pixel_sorting.png");
@@ -353,7 +374,7 @@ int main()
     {
         sil::Image image{"images/photo_faible_contraste.jpg"};
         normalize_histogram(image);
-        image.save("output/normalize_histogram.png");
+        image.save("output/normalize_histogram.jpg");
     }
     {
         sil::Image image{"images/imac.png"};

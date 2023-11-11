@@ -2,26 +2,26 @@
 
 - [📅 Planning](#-planning)
   - [Lundi](#lundi)
-    - [Prof](#prof)
+    - [Prof 9h30-12h45 (pause 11h00-11h15)](#prof-9h30-12h45-pause-11h00-11h15)
     - [Élève](#élève)
   - [Mardi](#mardi)
-    - [Matin](#matin)
-      - [Prof](#prof-1)
+    - [Matin 9h30-12h45 (pause 11h00-11h15)](#matin-9h30-12h45-pause-11h00-11h15)
+      - [Prof](#prof)
       - [Élève](#élève-1)
     - [Aprèm](#aprèm)
-      - [Prof](#prof-2)
+      - [Prof 13h45-17h (pause 15h15-15h30)](#prof-13h45-17h-pause-15h15-15h30)
       - [Élève](#élève-2)
   - [Mercredi](#mercredi)
-    - [Prof](#prof-3)
+    - [Prof 9h30-10h30](#prof-9h30-10h30)
     - [Élève](#élève-3)
   - [Jeudi](#jeudi)
-    - [Prof](#prof-4)
+    - [Prof 9h30-10h30](#prof-9h30-10h30-1)
     - [Élève](#élève-4)
   - [Vendredi](#vendredi)
-    - [Matin](#matin-1)
-      - [Prof](#prof-5)
+    - [Matin 9h30-10h30](#matin-9h30-10h30)
+      - [Prof](#prof-1)
       - [Élève](#élève-5)
-    - [Aprèm](#aprèm-1)
+    - [Aprèm 13h45-17h (pause 15h15-15h30)](#aprèm-13h45-17h-pause-15h15-15h30)
 - [📝 Sujet](#-sujet)
   - [Exercices à faire](#exercices-à-faire)
   - [Rapport](#rapport)
@@ -32,10 +32,6 @@
   - [⭐ Noir \& Blanc](#-noir--blanc)
   - [⭐ Channels swap](#-channels-swap)
   - [⭐ Négatif](#-négatif)
-  - [⭐⭐(⭐) Conversions RGB ⇔ HSL](#-conversions-rgb--hsl)
-    - [⭐ Hue shift](#-hue-shift)
-    - [⭐ Désaturation](#-désaturation)
-    - [⭐ Assombrissement / Éclaircissement](#-assombrissement--éclaircissement)
   - [⭐⭐ Contraste](#-contraste)
   - [⭐⭐ Luminosité](#-luminosité)
   - [⭐⭐ Miroir](#-miroir)
@@ -49,13 +45,13 @@
     - [⭐⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
     - [⭐⭐ Dessiner des courbes paramétriques](#-dessiner-des-courbes-paramétriques)
   - [⭐⭐⭐ Dessiner la fractale de Mandelbrot](#-dessiner-la-fractale-de-mandelbrot)
-  - [⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
+  - [⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐⭐ Flou gaussien](#-flou-gaussien)
     - [⭐⭐ Separable filter](#-separable-filter)
       - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
-  - [⭐⭐⭐ Histogram Equalization](#-histogram-equalization)
-  - [⭐⭐⭐ Affichage de l'histogramme](#-affichage-de-lhistogramme)
+  - [⭐⭐⭐(⭐) Histogram Equalization](#-histogram-equalization)
+  - [⭐⭐⭐⭐ Affichage de l'histogramme](#-affichage-de-lhistogramme)
   - [⭐⭐ Effet Sépia](#-effet-sépia)
   - [Feel free to implement your own effects!](#feel-free-to-implement-your-own-effects)
   - [⭐⭐⭐⭐ Kuwahara filter](#-kuwahara-filter)
@@ -64,8 +60,9 @@
   - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
   - [⭐⭐⭐⭐ Diamond Square](#-diamond-square)
   - [⭐⭐⭐⭐ Flood Fill](#-flood-fill)
-  - [⭐⭐⭐⭐ Canny Edge Detection](#-canny-edge-detection)
-  - [⭐⭐(⭐) Mosaic](#-mosaic)
+  - [⭐⭐⭐⭐⭐ Canny Edge Detection](#-canny-edge-detection)
+  - [⭐⭐ Mosaic](#-mosaic)
+    - [⭐⭐⭐ Mosaic flip](#-mosaic-flip)
   - [⭐⭐⭐⭐⭐ Ray Tracing](#-ray-tracing)
 
 
@@ -73,7 +70,7 @@
 
 ### Lundi
 
-#### Prof
+#### Prof 9h30-12h45 (pause 11h00-11h15)
 
 - [ ] Présentation du projet
 - [ ] Présentation de la lib
@@ -82,11 +79,11 @@
 
 - [ ] Création du groupe : binôme obligatoirement (et 1 trinôme dans la classe si impair)
 - [ ] Prise en main de la lib
-- [ ] Quelques exercices de niveau 1 (⭐), et 2 (⭐⭐) si vous vous sentez chaud
+- [ ] Quelques exercices de niveau 1 (⭐) et/ou 2 (⭐⭐)
 
 ### Mardi
 
-#### Matin
+#### Matin 9h30-12h45 (pause 11h00-11h15)
 
 ##### Prof
 
@@ -100,7 +97,7 @@
 
 #### Aprèm
 
-##### Prof
+##### Prof 13h45-17h (pause 15h15-15h30)
 
 - [ ] Présentation des algos avancés (niveau 3 ou plus ⭐⭐⭐)
 - [ ] Conseil : faites un fichier à part pour votre algo avancé, car il y aura probablement plusieurs fonctions intermédiaires à écrire, et peut-être des structs aussi.
@@ -112,7 +109,7 @@
 
 ### Mercredi
 
-#### Prof
+#### Prof 9h30-10h30
 
 - [ ] Si besoin, point de rappel sur une notion mal acquise.
 - [ ] Passer voir les groupes, regarder l'algo avancé qu'iels ont choisi.
@@ -124,7 +121,7 @@
 
 ### Jeudi
 
-#### Prof
+#### Prof 9h30-10h30
 
 - [ ] Si besoin, point de rappel sur une notion mal acquise.
 - [ ] Passer voir les groupes et décider qui présente quel algo. Possibilité que plusieurs groupes se mettent ensemble pour présenter leur algo si tout le monde a envie de passer.
@@ -136,7 +133,7 @@
 
 ### Vendredi
 
-#### Matin
+#### Matin 9h30-10h30
 
 ##### Prof
 
@@ -150,7 +147,7 @@
 - [ ] Écriture du rapport. (Vous avez jusqu'à lundi matin pour les rendre).
 - [ ] Préparation de la présentation pour celleux concerné.es
 
-#### Aprèm
+#### Aprèm 13h45-17h (pause 15h15-15h30)
 
 - [ ] Présentations
 
@@ -209,19 +206,24 @@ Par exemple, échangez le canal rouge et le canal bleu.
 
 ![](output/negative.png)
 
-### ⭐⭐(⭐) Conversions RGB ⇔ HSL
-
-Vous pouvez reprendre les formules RGB → HSL et HSL → RGB [depuis cette page](https://www.easyrgb.com/en/math.php). Attention, iels considèrent que R, G et B vont entre 0 et 255, alors que pour nous ils vont de 0 à 1. Il faudra donc légèrement adapter les formules du site.
-
-En elles-mêmes ces formules ne changent pas l'image, mais elles vous permettent d'implémenter facilement les effets suivants:
-
-#### ⭐ Hue shift
-#### ⭐ Désaturation
-#### ⭐ Assombrissement / Éclaircissement
-
 ### ⭐⭐ Contraste
 
 ### ⭐⭐ Luminosité
+
+| ![](images/photo.jpg)  | ![](output/luminosity+.jpg)  |![](output/luminosity-.jpg)  |
+|---|----|----|
+| Avant | Après éclaircissement | Après assombrissement |
+
+<details><summary>Indice</summary>
+On voudrait des courbes comme celles-ci, qui diminuent tous les nombres entre 0 et 1 (c-à-d assombrissent), ou les augmentent (c-à-d éclaircissent), tout en gardant 0 à 0 et 1 à 1 (afin de garder la plage dynamique de l'image, pour conserver des noirs purs et des blancs purs).
+<img src ="image-1.png"/>
+
+
+<details><summary>Indice 2</summary>
+Les fonctions puissance font exactement ce qu'on veut!<br/>
+La preuve: <a src="https://www.desmos.com/calculator/c3ztk51mng">https://www.desmos.com/calculator/c3ztk51mng</a>
+</details>
+</details>
 
 ### ⭐⭐ Miroir
 
@@ -301,7 +303,7 @@ Dessiner plein de disques à différents points de la courbe.
 Définir un nombre max d'itérations, itérer `z <- z * z + c` jusqu'à ce qu'on dépasse ce nombre d'itérations ou que la norme de z soit > 2, puis assigner une couleur en fonction du nombre d'itérations qu'on a fait avant de sortir de la boucle.
 </details>
 
-### ⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image
+### ⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image
 
 Trouvez les k couleurs les plus représentatives de l'image, puis assignez à chaque pixel la couleur dont il est le plus proche parmi les k.
 
@@ -326,16 +328,16 @@ https://youtu.be/5EuYKEvugLU
 
 Ne faire que le début ça suffit, jusqu'à 4m09.
 
-### ⭐⭐⭐ Histogram Equalization
+### ⭐⭐⭐(⭐) Histogram Equalization
 
-| ![](images/photo_faible_contraste.jpg)  | ![](output/normalize_histogram.png)  |
+| ![](images/photo_faible_contraste.jpg)  | ![](output/normalize_histogram.jpg)  |
 |---|----|
 | Avant | Après |
 
 Amélioration du contraste, en calculant la luminosité min et max, et en appliquant une transformation qui va mapper le plus sombre à 0 et le plus clair à 1.
 (PS: testez avec l'image "images/photo_faible_contraste.jpg", vous verrez bien l'intérêt de l'effet.)
 
-### ⭐⭐⭐ Affichage de l'histogramme
+### ⭐⭐⭐⭐ Affichage de l'histogramme
 
 S'inspirer de Lightroom. Potentiellement split les histogrammes R, G et B
 
@@ -367,15 +369,17 @@ Ensuite, au lieu de trier tous les pixels de l'image, triez par colonne (ou par 
 
 Pour trier un tableau, vous pouvez utiliser [`std::sort`](https://www.geeksforgeeks.org/sort-c-stl/).
 
+Plutôt que d'utiliser `get_pixel()` vous avez probablement intérêt à utiliser à utiliser `pixels()` pour récupérer le tableau contenant tous les pixels de l'image.
+
 ### ⭐⭐⭐⭐ Diamond Square
 
 https://youtu.be/4GuAV1PnurU
 
 ### ⭐⭐⭐⭐ Flood Fill
 
-### ⭐⭐⭐⭐ Canny Edge Detection
+### ⭐⭐⭐⭐⭐ Canny Edge Detection
 
-### ⭐⭐(⭐) Mosaic
+### ⭐⭐ Mosaic
 
 ![](output/mosaic.png)
 
@@ -383,7 +387,9 @@ https://youtu.be/4GuAV1PnurU
 You can use a modulo (`%`) somewhere.
 </details>
 
-BONUS ⭐⭐⭐: flip every other image:
+#### ⭐⭐⭐ Mosaic flip
+
+Flip every other image:
 
 ![](output/mosaic_flip.png)
 
