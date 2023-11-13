@@ -32,7 +32,6 @@
   - [⭐ Noir \& Blanc](#-noir--blanc)
   - [⭐ Channels swap](#-channels-swap)
   - [⭐ Négatif](#-négatif)
-  - [⭐⭐ Contraste](#-contraste)
   - [⭐⭐ Luminosité](#-luminosité)
   - [⭐⭐ Miroir](#-miroir)
   - [⭐⭐ Rotation de 90°](#-rotation-de-90)
@@ -205,8 +204,6 @@ Par exemple, échangez le canal rouge et le canal bleu.
 ### ⭐ Négatif
 
 ![](output/negative.png)
-
-### ⭐⭐ Contraste
 
 ### ⭐⭐ Luminosité
 
