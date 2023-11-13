@@ -21,7 +21,7 @@ include(FetchContent)
 FetchContent_Declare(
     sil
     GIT_REPOSITORY https://github.com/JulesFouchy/Simple-Image-Lib
-    GIT_TAG 1e606dee895dc41cc87cbba69cdddb2cd1d8e217
+    GIT_TAG 89bd175cd55fb6daa9e99b218e869c3d516043f4
 )
 FetchContent_MakeAvailable(sil)
 

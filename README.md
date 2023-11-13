@@ -39,6 +39,7 @@
   - [⭐⭐⭐ Position glitch](#-position-glitch)
   - [⭐⭐⭐ Vortex](#-vortex)
   - [⭐⭐ RGB split](#-rgb-split)
+  - [⭐ Dessiner un dégradé](#-dessiner-un-dégradé)
   - [⭐⭐ Dessiner un disque](#-dessiner-un-disque)
     - [⭐ Dessiner un cercle](#-dessiner-un-cercle)
     - [⭐⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
@@ -72,7 +73,11 @@
 #### Prof 9h30-12h45 (pause 11h00-11h15)
 
 - [ ] Présentation du projet
+  - [ ] Je vous encourage à dans un premier temps essayer de faire chaque exercice sans regarder les indices, ni chercher sur internet / ChatGPT. Essayez de résoudre le problème par vous-même, ça aide à mieux le comprendre, puis apprécier et retenir la solution. + si vous réussissez seul.e, giga satisfaction. Les exos sont "faciles", c'est fait pour. Bien sûr que ChatGPT peut les résoudre, mais vous n'apprendrez rien si vous n'essayez pas par vous même. Et plutôt que ChatGPT, demandez moi en premier si possible, je pourrai mieux vous aiguiller / expliquez juste comme il faut pour que vous appreniez un max.
 - [ ] Présentation de la lib
+  - [ ] Parler de la représentation des couleurs en vec3 avec des valeurs de 0 à 1
+  - [ ] Mentionner que pour faire les choses bien il ne faudrait pas travailler en sRGB mais dans un espace perceptuellement correct (CIELab, Oklab)
+  - [ ] Mentionner que la lib n'est pas un exemple de la meilleure API de l'univers, elle est minimaliste pour les forcer à écrire un max de code, se rendre compte des problèmes qui peuvent survenir, pas trop leur mâcher le travail. (Par exemple, on devrait permettre de gérer un wrap mode, et faire les conversions d'espace de couleur automatiquement, et pouvoir itérer sur les lignes ou sur les colonnes, et aussi le fait que le chemins soient relatifs au dossier contenant le CMakeLists.txt c'est atroce en production)
 
 #### Élève
 
@@ -140,6 +145,7 @@
   - [ ] Extension VSCode, et comment elle permet de générer une Table of Content
   - [ ] Syntaxe basique (titres, gras, italique), et si voulez vous pouvez aller voir comment [le document que vous êtes en train de lire](TODO mettre le lien du sujet qui est sur le git) est écrit, c'est du markdown !
   - [ ] Mettre des images (s'assurer du coup que leur dossier output soit à la racine du repo, et soit commit)
+  - [ ] Vous pouvez mettre du html si vous voulez faire des trucs + avancés.
 
 ##### Élève
 
@@ -261,6 +267,16 @@ Chaque pixel subit une rotation, de plus en plus importante au fur et à mesure 
 ⚠️ Créez une nouvelle image et travaillez sur celle-ci. Il ne faut pas modifier l'image originale pendant que vous bouclez pour appliquer l'effet, sinon certains pixels n'utiliseront pas la bonne couleur de l'image originale, mais plutôt la couleur déjà modifiée par un pixel précédent, ce qui pourrait vous donner ce genre de rendu moins intéressant :
 
 ![](output/rgb_split_incorrect.png)
+
+### ⭐ Dessiner un dégradé
+
+![](output/gradient.png)
+
+Vous pouvez créer une image noire avec
+```cpp
+sil::Image image{300/*width*/, 200/*height*/};
+```
+puis itérer sur les pixels pour les colorer.
 
 ### ⭐⭐ Dessiner un disque
 
