@@ -54,7 +54,7 @@
   - [⭐⭐⭐⭐ Affichage de l'histogramme](#-affichage-de-lhistogramme)
   - [⭐⭐ Effet Sépia](#-effet-sépia)
   - [Feel free to implement your own effects!](#feel-free-to-implement-your-own-effects)
-  - [⭐⭐⭐⭐ Kuwahara filter](#-kuwahara-filter)
+  - [⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture)](#-filtre-de-kuwahara-effet-peinture)
   - [⭐⭐⭐ Color palette dithering](#-color-palette-dithering)
   - [⭐⭐⭐ Spatial dithering](#-spatial-dithering)
   - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
@@ -345,11 +345,13 @@ S'inspirer de Lightroom. Potentiellement split les histogrammes R, G et B
 
 ### Feel free to implement your own effects!
 
-### ⭐⭐⭐⭐ Kuwahara filter
+### ⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture)
+
+![](output/kuwahara.jpg)
 
 https://youtu.be/LDhN-JK3U9g
 
-(Juste la version simple, qui est expliquée à 3:11, suffit. Si vous voulez aller plus loin, vous êtes les bienvenu.es bien sûr 😉)
+(Juste la version simple, qui est expliquée entre 3:11 et 3:30, suffit. Si vous voulez aller plus loin, vous êtes les bienvenu.es bien sûr 😉)
 
 ### ⭐⭐⭐ Color palette dithering
 
