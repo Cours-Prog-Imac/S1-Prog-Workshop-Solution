@@ -8,26 +8,19 @@
 
 void keep_green_only(sil::Image& image)
 {
-    for (int x{0}; x < image.width(); x++)
+    for (glm::vec3& color : image.pixels())
     {
-        for (int y{0}; y < image.height(); y++)
-        {
-            image.pixel(x, y).r = 0.f;
-            image.pixel(x, y).b = 0.f;
-        }
+        color.r = 0.f;
+        color.b = 0.f;
     }
 }
 
 void black_and_white(sil::Image& image)
 {
-    for (int x{0}; x < image.width(); x++)
+    for (glm::vec3& color : image.pixels())
     {
-        for (int y{0}; y < image.height(); y++)
-        {
-            glm::vec3 const color = image.pixel(x, y);
-            float const     grey  = 0.299f * color.r + 0.587f * color.g + 0.114f * color.b;
-            image.pixel(x, y)     = glm::vec3{grey, grey, grey};
-        }
+        float const grey = 0.299f * color.r + 0.587f * color.g + 0.114f * color.b;
+        color            = glm::vec3{grey, grey, grey};
     }
 }
 
@@ -126,26 +119,17 @@ void rosace(sil::Image& image, float radius, float thickness)
 
 void channels_swap(sil::Image& image)
 {
-    for (int x{0}; x < image.width(); x++)
+    for (glm::vec3& color : image.pixels())
     {
-        for (int y{0}; y < image.height(); y++)
-        {
-            std::swap(
-                image.pixel(x, y).r,
-                image.pixel(x, y).b
-            );
-        }
+        std::swap(color.r, color.b);
     }
 }
 
 void negative(sil::Image& image)
 {
-    for (int x{0}; x < image.width(); x++)
+    for (glm::vec3& color : image.pixels())
     {
-        for (int y{0}; y < image.height(); y++)
-        {
-            image.pixel(x, y) = 1.f - image.pixel(x, y);
-        }
+        color = 1.f - color;
     }
 }
 
@@ -245,12 +229,9 @@ sil::Image mandelbrot()
 
 void luminosity(sil::Image& image, float luminosity)
 {
-    for (int x{0}; x < image.width(); x++)
+    for (glm::vec3& color : image.pixels())
     {
-        for (int y{0}; y < image.height(); y++)
-        {
-            image.pixel(x, y) = glm::pow(image.pixel(x, y), glm::vec3{luminosity});
-        }
+        color = glm::pow(color, glm::vec3{luminosity});
     }
 }
 
