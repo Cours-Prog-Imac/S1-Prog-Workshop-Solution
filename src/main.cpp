@@ -492,8 +492,8 @@ int main()
     }
     {
         sil::Image image{"images/photo.jpg"};
-        k_means(image, 18);
-        image.save("output/k_means_18_colors.jpg");
+        k_means(image, 16);
+        image.save("output/k_means_16_colors.jpg");
     }
     {
         sil::Image image{"images/logo.png"};

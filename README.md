@@ -322,9 +322,9 @@ Définir un nombre max d'itérations, itérer `z <- z * z + c` jusqu'à ce qu'on
 
 ### ⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image
 
-| ![](images/photo.jpg)  | ![](output/k_means_2_colors.jpg) | ![](output/k_means_3_colors.jpg)  | ![](output/k_means_18_colors.jpg)  |
+| ![](images/photo.jpg)  | ![](output/k_means_2_colors.jpg) | ![](output/k_means_3_colors.jpg)  | ![](output/k_means_16_colors.jpg)  |
 |---|----|----|----|
-| Originale | 2 couleurs | 3 couleurs | 18 couleurs |
+| Originale | 2 couleurs | 3 couleurs | 16 couleurs |
 
 Trouvez les k couleurs les plus représentatives de l'image, puis assignez à chaque pixel la couleur dont il est le plus proche parmi les k.
 
