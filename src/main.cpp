@@ -361,6 +361,20 @@ void k_means(sil::Image& image, int nb_colors)
     }
 }
 
+void color_glitch(sil::Image& image)
+{
+    for (glm::vec3& color : image.pixels())
+    {
+        if (random_float(0.f, 1.f) < 0.7f) // Keep 70% of the pixels intact
+            continue;
+        color = glm::vec3{
+            random_float(0.f, 1.f),
+            random_float(0.f, 1.f),
+            random_float(0.f, 1.f),
+        };
+    }
+}
+
 void position_glitch(sil::Image& image)
 {
     int const nb_squares{100};
@@ -524,6 +538,11 @@ int main()
         sil::Image image{"images/logo.png"};
         image = rotate_90_degrees(image);
         image.save("output/rotate_90_degrees.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        color_glitch(image);
+        image.save("output/color_glitch.png");
     }
     {
         sil::Image image{"images/logo.png"};

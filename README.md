@@ -215,7 +215,7 @@ Par exemple, échangez le canal rouge et le canal bleu.
 
 | ![](images/photo.jpg)  | ![](output/luminosity+.jpg)  |![](output/luminosity-.jpg)  |
 |---|----|----|
-| Avant | Après éclaircissement | Après assombrissement |
+| Image originale | Après éclaircissement | Après assombrissement |
 
 <details><summary>Indice</summary>
 On voudrait des courbes comme celles-ci, qui diminuent tous les nombres entre 0 et 1 (c-à-d assombrissent), ou les augmentent (c-à-d éclaircissent), tout en gardant 0 à 0 et 1 à 1 (afin de garder la plage dynamique de l'image, pour conserver des noirs purs et des blancs purs).
@@ -241,6 +241,8 @@ Symétrie par rapport à l'axe Y (vertical).
 La formule générique pour un angle quelconque est un peu plus compliquée, mais pour 90° il y a une formule vraiment simple, essayez de la trouver !
 
 ### ⭐⭐ Color glitch
+
+![](output/color_glitch.png)
 
 Remplacer quelques pixel au hasard par une couleur aléatoire.
 
