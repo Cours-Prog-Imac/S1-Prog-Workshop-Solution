@@ -416,32 +416,32 @@ void vortex(sil::Image& image)
 int main()
 {
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         keep_green_only(image);
         image.save("output/keep_green_only.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         black_and_white(image);
         image.save("output/black_and_white.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         channels_swap(image);
         image.save("output/channels_swap.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         negative(image);
         image.save("output/negative.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         image = mosaic(image);
         image.save("output/mosaic.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         image = mosaic_flip(image);
         image.save("output/mosaic_flip.png");
     }
@@ -500,7 +500,7 @@ int main()
         image.save("output/k_means_18_colors.jpg");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         pixel_sorting(image);
         image.save("output/pixel_sorting.png");
     }
@@ -510,32 +510,32 @@ int main()
         image.save("output/normalize_histogram.jpg");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         box_blur(image, 20);
         image.save("output/box_blur.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         rgb_split(image);
         image.save("output/rgb_split.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         mirror(image);
         image.save("output/mirror.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         image = rotate_90_degrees(image);
         image.save("output/rotate_90_degrees.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         position_glitch(image);
         image.save("output/position_glitch.png");
     }
     {
-        sil::Image image{"images/imac.png"};
+        sil::Image image{"images/logo.png"};
         vortex(image);
         image.save("output/vortex.png");
     }
