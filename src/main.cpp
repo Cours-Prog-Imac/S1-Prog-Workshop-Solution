@@ -446,6 +446,11 @@ int main()
         image.save("output/mosaic_flip.png");
     }
     {
+        sil::Image image{300, 200};
+        gradient(image);
+        image.save("output/gradient.png");
+    }
+    {
         sil::Image image{500, 500};
         disk(image, {250.f, 250.f}, 100.f);
         image.save("output/disk.png");
@@ -533,10 +538,5 @@ int main()
         sil::Image image{"images/imac.png"};
         vortex(image);
         image.save("output/vortex.png");
-    }
-    {
-        sil::Image image{300, 200};
-        gradient(image);
-        image.save("output/gradient.png");
     }
 }
