@@ -45,7 +45,7 @@
     - [⭐⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
     - [⭐⭐ Dessiner des courbes paramétriques](#-dessiner-des-courbes-paramétriques)
   - [⭐⭐⭐ Dessiner la fractale de Mandelbrot](#-dessiner-la-fractale-de-mandelbrot)
-  - [⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
+  - [⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐⭐ Flou gaussien](#-flou-gaussien)
     - [⭐⭐ Separable filter](#-separable-filter)
@@ -316,7 +316,11 @@ Dessiner plein de disques à différents points de la courbe.
 Définir un nombre max d'itérations, itérer `z <- z * z + c` jusqu'à ce qu'on dépasse ce nombre d'itérations ou que la norme de z soit > 2, puis assigner une couleur en fonction du nombre d'itérations qu'on a fait avant de sortir de la boucle.
 </details>
 
-### ⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image
+### ⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image
+
+| ![](images/photo.jpg)  | ![](output/k_means_2_colors.jpg) | ![](output/k_means_3_colors.jpg)  | ![](output/k_means_18_colors.jpg)  |
+|---|----|----|----|
+| Originale | 2 couleurs | 3 couleurs | 18 couleurs |
 
 Trouvez les k couleurs les plus représentatives de l'image, puis assignez à chaque pixel la couleur dont il est le plus proche parmi les k.
 
