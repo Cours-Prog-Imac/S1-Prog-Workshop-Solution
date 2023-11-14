@@ -5,6 +5,7 @@
 #include "convolution.hpp"
 #include "glm/gtx/matrix_transform_2d.hpp"
 #include "normalize_histogram.hpp"
+#include "random.hpp"
 
 void keep_green_only(sil::Image& image)
 {
@@ -150,8 +151,7 @@ void pixel_sorting(sil::Image& image)
 
     for (int i = 0; i < image.pixels().size() / group_length; ++i)
     {
-        float const random{static_cast<float>(rand()) / static_cast<float>(RAND_MAX)};
-        if (random < 0.7f)
+        if (random_float(0.f, 1.f) < 0.7f)
             continue;
         int const begin{i * group_length};
         int const end{std::min(
@@ -347,7 +347,7 @@ void k_means(sil::Image& image, int nb_colors)
     // Initialize means
     for (glm::vec3& mean : means)
     {
-        mean = image.pixels()[rand() % (image.width() * image.height())];
+        mean = image.pixels()[random_int(0, image.pixels().size())];
     }
     // Iterate k-means process
     for (int i = 0; i < 10; ++i) // 10 is an empiric number that gives good quality and good performance
@@ -361,11 +361,6 @@ void k_means(sil::Image& image, int nb_colors)
     }
 }
 
-int random_int(int min, int max)
-{
-    return rand() % (max - min) + min;
-}
-
 void position_glitch(sil::Image& image)
 {
     int const nb_squares{100};
@@ -375,10 +370,10 @@ void position_glitch(sil::Image& image)
         int const width{random_int(1, 30)};
         int const height{random_int(1, 10)};
 
-        int const x1{random_int(0, image.width() - 1 - width)};
-        int const x2{random_int(0, image.width() - 1 - width)};
-        int const y1{random_int(0, image.height() - 1 - height)};
-        int const y2{random_int(0, image.height() - 1 - height)};
+        int const x1{random_int(0, image.width() - width)};
+        int const x2{random_int(0, image.width() - width)};
+        int const y1{random_int(0, image.height() - height)};
+        int const y2{random_int(0, image.height() - height)};
 
         for (int x_offset{0}; x_offset < width; ++x_offset)
         {
@@ -415,6 +410,7 @@ void vortex(sil::Image& image)
 
 int main()
 {
+    set_random_seed(1234); // Arbitrary number, guarantees that the artworks that depend on random will be the same every run (helps me check that my algorithm produces the same result when I tweak it).
     {
         sil::Image image{"images/logo.png"};
         keep_green_only(image);
