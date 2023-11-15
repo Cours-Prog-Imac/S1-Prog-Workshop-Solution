@@ -43,7 +43,6 @@
   - [⭐⭐ Dessiner un disque](#-dessiner-un-disque)
     - [⭐ Dessiner un cercle](#-dessiner-un-cercle)
     - [⭐⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
-    - [⭐⭐ Dessiner des courbes paramétriques](#-dessiner-des-courbes-paramétriques)
   - [⭐⭐⭐ Dessiner la fractale de Mandelbrot](#-dessiner-la-fractale-de-mandelbrot)
   - [⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
@@ -73,8 +72,12 @@
 
 #### Prof 9h30-12h45 (pause 11h00-11h15)
 
+- [ ] Présentation de moi
 - [ ] Présentation du projet
-  - [ ] Je vous encourage à dans un premier temps essayer de faire chaque exercice sans regarder les indices, ni chercher sur internet / ChatGPT. Essayez de résoudre le problème par vous-même, ça aide à mieux le comprendre, puis apprécier et retenir la solution. + si vous réussissez seul.e, giga satisfaction. Les exos sont "faciles", c'est fait pour. Bien sûr que ChatGPT peut les résoudre, mais vous n'apprendrez rien si vous n'essayez pas par vous même. Et plutôt que ChatGPT, demandez moi en premier si possible, je pourrai mieux vous aiguiller / expliquez juste comme il faut pour que vous appreniez un max.
+  - [ ] C'est quoi le sujet? -> faire des effets sur les images, comme on peut en trouver dans photoshop etc, filtre insta etc
+  - [ ] Par groupe de 2, et 1 groupe de 3 si impair
+  - [ ] Evaluation: min 1 exo de niveau 3 ou +, et autant du reste que possible. Montrez moi juste que vous êtes investies, 4h d'autonomie par jour c'est très bien. Posez un max de question, quand vous êtes bloquées et/ou par curiosité.
+  - [ ] Je vous encourage à dans un premier temps essayer de faire chaque exercice sans regarder les indices, ni chercher sur internet / ChatGPT. Essayez de résoudre le problème par vous-même, ça aide à mieux le comprendre, puis apprécier et retenir la solution. + si vous réussissez seul.e, giga satisfaction. Les exos sont "faciles", c'est fait pour. Bien sûr que ChatGPT peut les résoudre, mais vous n'apprendrez rien si vous n'essayez pas par vous même. Et plutôt que ChatGPT, demandez moi en premier si possible, je pourrai mieux vous aiguiller / expliquez juste comme il faut pour que vous appreniez un max. Ou sinon demandez à vos camarades en deuxième solution (+ c'est un bon exercice d'expliquer donc vous rendez service à la fois à vous-même et à elleux)   
 - [ ] Présentation de la lib
   - [ ] Parler de la représentation des couleurs en vec3 avec des valeurs de 0 à 1
   - [ ] Mentionner que pour faire les choses bien il ne faudrait pas travailler en sRGB mais dans un espace perceptuellement correct (CIELab, Oklab)
@@ -245,7 +248,7 @@ La formule générique pour un angle quelconque est un peu plus compliquée, mai
 
 ![](output/color_glitch.png)
 
-Remplacer quelques pixel au hasard par une couleur aléatoire.
+Remplacer quelques pixels au hasard par une couleur aléatoire.
 
 Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
 
@@ -310,10 +313,6 @@ En reprenant et modifiant légèrement votre code pour le disque, écrivez le co
 
 Maintenant que vous savez dessiner un cercle, dessinez-en plusieurs sur la même image, à des positions bien choisies, de sorte à dessiner une rosace.
 (PS: il va surement falloir faire de la trigo!)
-
-#### ⭐⭐ Dessiner des courbes paramétriques
-
-Dessiner plein de disques à différents points de la courbe.
 
 ### ⭐⭐⭐ Dessiner la fractale de Mandelbrot
 
