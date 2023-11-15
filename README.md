@@ -56,7 +56,7 @@
   - [Feel free to implement your own effects!](#feel-free-to-implement-your-own-effects)
   - [⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture)](#-filtre-de-kuwahara-effet-peinture)
   - [⭐⭐⭐ Color palette dithering](#-color-palette-dithering)
-  - [⭐⭐⭐ Spatial dithering](#-spatial-dithering)
+  - [⭐⭐⭐ Tramage](#-tramage)
   - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
   - [⭐⭐⭐⭐ Diamond Square](#-diamond-square)
   - [⭐⭐⭐⭐ Flood Fill](#-flood-fill)
@@ -382,7 +382,13 @@ https://youtu.be/LDhN-JK3U9g
 
 https://youtu.be/8wOUe32Pt-E
 
-### ⭐⭐⭐ Spatial dithering
+### ⭐⭐⭐ Tramage
+
+![](output/ordered_dithering.png)
+
+Vous pouvez lire [ce super article](https://surma.dev/things/ditherpunk/) sur le tramage (a.k.a. *dithering* en anglais).
+
+Sur l'image ci-dessus j'ai utilisé de l'*ordered dithering* avec une matrice de Bayer 4x4 (a.k.a. de niveau 1). Tout est expliqué dans l'article ci-dessus ! (Plus précisément, j'ai repris la matrice et le code depuis [cet autre article](https://medium.com/the-bkpt/dithered-shading-tutorial-29f57d06ac39).)
 
 ### ⭐⭐⭐⭐ Pixel sorting
 
