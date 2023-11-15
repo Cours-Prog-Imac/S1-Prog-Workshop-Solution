@@ -76,3 +76,28 @@ void box_blur(sil::Image& image, int const kernel_size)
     }
     apply_kernel(image, kernel);
 }
+
+void bokeh_blur(sil::Image& image, int const kernel_size)
+{
+    Kernel kernel{kernel_size, kernel_size};
+    int    count{0};
+    for (int x = 0; x < kernel_size; ++x)
+    {
+        for (int y = 0; y < kernel_size; ++y)
+        {
+            if (glm::distance(glm::vec2{x, y}, glm::vec2{kernel_size / 2.f}) < kernel_size / 2.f)
+            {
+                kernel.at(x, y) = 1.f;
+                count += 1;
+            }
+        }
+    }
+    for (int x = 0; x < kernel.width(); ++x)
+    {
+        for (int y = 0; y < kernel.height(); ++y)
+        {
+            kernel.at(x, y) /= static_cast<float>(count);
+        }
+    }
+    apply_kernel(image, kernel);
+}

@@ -582,6 +582,11 @@ int main()
         image.save("output/vortex.png");
     }
     {
+        sil::Image image{"images/logo.png"};
+        bokeh_blur(image, 20);
+        image.save("output/bokeh_blur.png");
+    }
+    {
         sil::Image image{"images/photo.jpg"};
         ordered_dithering(image);
         image.save("output/ordered_dithering.png");

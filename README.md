@@ -48,6 +48,7 @@
   - [⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐⭐ Flou gaussien](#-flou-gaussien)
+    - [⭐⭐ Flou bokeh (appareil photo)](#-flou-bokeh-appareil-photo)
     - [⭐⭐ Separable filter](#-separable-filter)
       - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
   - [⭐⭐⭐(⭐) Histogram Equalization](#-histogram-equalization)
@@ -342,6 +343,10 @@ Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et util
 Box blur
 
 #### ⭐⭐ Flou gaussien
+
+#### ⭐⭐ Flou bokeh (appareil photo)
+
+![](output/bokeh_blur.png)
 
 #### ⭐⭐ Separable filter
 
