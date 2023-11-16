@@ -218,14 +218,12 @@ Par exemple, échangez le canal rouge et le canal bleu.
 | Image originale | Après éclaircissement | Après assombrissement |
 
 <details><summary>Indice</summary>
-On voudrait des courbes comme celles-ci, qui diminuent tous les nombres entre 0 et 1 (c-à-d assombrissent), ou les augmentent (c-à-d éclaircissent), tout en gardant 0 à 0 et 1 à 1 (afin de garder la plage dynamique de l'image, pour conserver des noirs purs et des blancs purs).
+On voudrait des courbes comme celles-ci, qui diminuent tous les nombres entre 0 et 1 (courbe bleue) (c-à-d assombrisse), ou les augmentent (courbe verte) (c-à-d éclaircisse), tout en gardant 0 à 0 et 1 à 1 (afin de garder la plage dynamique de l'image, pour conserver des noirs purs et des blancs purs).
 <img src ="image-1.png"/>
-
-
+</details>
 <details><summary>Indice 2</summary>
 Les fonctions puissance font exactement ce qu'on veut!<br/>
 La preuve: <a src="https://www.desmos.com/calculator/c3ztk51mng">https://www.desmos.com/calculator/c3ztk51mng</a>
-</details>
 </details>
 
 ### ⭐⭐ Miroir
@@ -400,13 +398,24 @@ Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et util
 
 ![](output/diamond_square_greyscale.png)
 
-https://youtu.be/4GuAV1PnurU
+Algorithme de génération de height map, qui peut ensuite être utilisée pour créer des terrains prrocéduraux dans des jeux vidéos par exemple.
 
-Tip: commencez par travailler sur une image toute petite (e.g. 17x17), afin de bien voir les pixels et ce qu'il se passe.
+Voici une bonne vidéo expliquant l'algorithme:
+[![diamond square video](https://img.youtube.com/vi/4GuAV1PnurU/0.jpg)](https://www.youtube.com/watch?v=4GuAV1PnurU)
+
+Conseil: commencez par travailler sur une image toute petite (e.g. 17x17), afin de bien voir les pixels et ce qu'il se passe.
 
 #### ⭐⭐ Colorer la height map
 
 ![](output/diamond_square_colored.png)
+
+
+<details><summary>Indice</summary>
+Avec `glm::mix(color1, color2, pourcentage);` vous pouvez faire un mélange entre deux couleurs données.
+</details>
+<details><summary>Indice 2</summary>
+Essayez par exemple de faire un dégradé de bleu quand le niveau de gris est entre 0 et 0.5, et un dégradé entre du vert et du marron quand le niveau de gris est entre 0.5 et 1.
+</details>
 
 ### ⭐⭐ Mosaic
 
