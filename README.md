@@ -51,16 +51,12 @@
     - [⭐⭐ Separable filter](#-separable-filter)
       - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
   - [⭐⭐⭐(⭐) Histogram Equalization](#-histogram-equalization)
-  - [⭐⭐⭐⭐ Affichage de l'histogramme](#-affichage-de-lhistogramme)
-  - [⭐⭐ Effet Sépia](#-effet-sépia)
   - [Feel free to implement your own effects!](#feel-free-to-implement-your-own-effects)
   - [⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture)](#-filtre-de-kuwahara-effet-peinture)
-  - [⭐⭐⭐ Color palette dithering](#-color-palette-dithering)
   - [⭐⭐⭐ Tramage](#-tramage)
   - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
-  - [⭐⭐⭐⭐ Diamond Square](#-diamond-square)
-  - [⭐⭐⭐⭐ Flood Fill](#-flood-fill)
-  - [⭐⭐⭐⭐⭐ Canny Edge Detection](#-canny-edge-detection)
+  - [⭐⭐⭐⭐⭐⭐ Diamond Square](#-diamond-square)
+    - [⭐⭐ Colorer la height map](#-colorer-la-height-map)
   - [⭐⭐ Mosaic](#-mosaic)
     - [⭐⭐⭐ Mosaic flip](#-mosaic-flip)
   - [⭐⭐⭐⭐⭐ Ray Tracing](#-ray-tracing)
@@ -366,12 +362,6 @@ Ne faire que le début ça suffit, jusqu'à 4m09.
 Amélioration du contraste, en calculant la luminosité min et max, et en appliquant une transformation qui va mapper le plus sombre à 0 et le plus clair à 1.
 (PS: testez avec l'image "images/photo_faible_contraste.jpg", vous verrez bien l'intérêt de l'effet.)
 
-### ⭐⭐⭐⭐ Affichage de l'histogramme
-
-S'inspirer de Lightroom. Potentiellement split les histogrammes R, G et B
-
-### ⭐⭐ Effet Sépia
-
 ### Feel free to implement your own effects!
 
 ### ⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture)
@@ -381,10 +371,6 @@ S'inspirer de Lightroom. Potentiellement split les histogrammes R, G et B
 https://youtu.be/LDhN-JK3U9g
 
 (Juste la version simple, qui est expliquée entre 3:11 et 3:30, suffit. Si vous voulez aller plus loin, vous êtes les bienvenu.es bien sûr 😉)
-
-### ⭐⭐⭐ Color palette dithering
-
-https://youtu.be/8wOUe32Pt-E
 
 ### ⭐⭐⭐ Tramage
 
@@ -410,13 +396,17 @@ Plutôt que d'utiliser `get_pixel()` vous avez probablement intérêt à utilise
 
 Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
 
-### ⭐⭐⭐⭐ Diamond Square
+### ⭐⭐⭐⭐⭐⭐ Diamond Square
+
+![](output/diamond_square_greyscale.png)
 
 https://youtu.be/4GuAV1PnurU
 
-### ⭐⭐⭐⭐ Flood Fill
+Tip: commencez par travailler sur une image toute petite (e.g. 17x17), afin de bien voir les pixels et ce qu'il se passe.
 
-### ⭐⭐⭐⭐⭐ Canny Edge Detection
+#### ⭐⭐ Colorer la height map
+
+![](output/diamond_square_colored.png)
 
 ### ⭐⭐ Mosaic
 

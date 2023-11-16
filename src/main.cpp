@@ -3,6 +3,7 @@
 #include <limits>
 #include <sil/sil.hpp>
 #include "convolution.hpp"
+#include "diamond_square.hpp"
 #include "glm/gtx/matrix_transform_2d.hpp"
 #include "normalize_histogram.hpp"
 #include "random.hpp"
@@ -590,5 +591,13 @@ int main()
         sil::Image image{"images/photo.jpg"};
         ordered_dithering(image);
         image.save("output/ordered_dithering.png");
+    }
+    {
+        set_random_seed(2000); // A seed that looks good for our map
+        sil::Image image{513, 513};
+        diamond_square(image);
+        image.save("output/diamond_square_greyscale.png");
+        colorize_heightmap(image);
+        image.save("output/diamond_square_colored.png");
     }
 }
