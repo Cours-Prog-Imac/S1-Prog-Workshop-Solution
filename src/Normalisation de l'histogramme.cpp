@@ -1,4 +1,4 @@
-#include "normalize_histogram.hpp"
+#include "Normalisation de l'histogramme.hpp"
 
 struct Histogram {
     float min_luminosity;

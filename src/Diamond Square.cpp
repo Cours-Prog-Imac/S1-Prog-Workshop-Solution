@@ -1,4 +1,4 @@
-#include "diamond_square.hpp"
+#include "Diamond Square.hpp"
 #include "random.hpp"
 
 bool is_power_of_2(int n)

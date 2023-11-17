@@ -32,22 +32,22 @@
   - [⭐ Échanger les canaux](#-échanger-les-canaux)
   - [⭐ Noir \& Blanc](#-noir--blanc)
   - [⭐ Négatif](#-négatif)
-  - [⭐ Dessiner un dégradé](#-dessiner-un-dégradé)
+  - [⭐ Dégradé](#-dégradé)
   - [⭐⭐ Miroir](#-miroir)
   - [⭐⭐ Image bruitée](#-image-bruitée)
   - [⭐⭐ Rotation de 90°](#-rotation-de-90)
   - [⭐⭐ RGB split](#-rgb-split)
   - [⭐⭐ Luminosité](#-luminosité)
-  - [⭐⭐ Dessiner un disque](#-dessiner-un-disque)
-    - [⭐ Dessiner un cercle](#-dessiner-un-cercle)
-    - [⭐⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
+  - [⭐⭐ Disque](#-disque)
+    - [⭐ Cercle](#-cercle)
+    - [⭐⭐⭐ Rosace](#-rosace)
   - [⭐⭐ Mosaïque](#-mosaïque)
     - [⭐⭐⭐ Mosaïque miroir](#-mosaïque-miroir)
   - [⭐⭐⭐ Glitch](#-glitch)
-  - [⭐⭐⭐ Dessiner la fractale de Mandelbrot](#-dessiner-la-fractale-de-mandelbrot)
+  - [⭐⭐⭐ Fractale de Mandelbrot](#-fractale-de-mandelbrot)
   - [⭐⭐⭐ Vortex](#-vortex)
   - [⭐⭐⭐(⭐) Tramage](#-tramage)
-  - [⭐⭐⭐(⭐) Histogram Equalization](#-histogram-equalization)
+  - [⭐⭐⭐(⭐) Normalisation de l'histogramme](#-normalisation-de-lhistogramme)
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐ Netteté, Contours, etc.](#-netteté-contours-etc)
     - [⭐⭐ Filtres séparables](#-filtres-séparables)
@@ -131,7 +131,6 @@
 
 - [ ] Finir votre algo avancé
 
-
 ### Vendredi
 
 #### Matin 9h30-10h30
@@ -214,7 +213,7 @@ N'hésitez pas à **aller chercher la formule sur internet** si besoin !
 
 ![](output/negative.png)
 
-### ⭐ Dessiner un dégradé
+### ⭐ Dégradé
 
 ![](output/gradient.png)
 
@@ -269,7 +268,7 @@ Les fonctions puissance font exactement ce qu'on veut!
 La preuve: https://www.desmos.com/calculator/c3ztk51mng
 </details>
 
-### ⭐⭐ Dessiner un disque
+### ⭐⭐ Disque
 
 ![](output/disk.png)
 
@@ -282,13 +281,13 @@ sil::Image image{500/*width*/, 500/*height*/};
 Ensuite, à vous de parcourir les pixels et de les colorier ou non en fonction de si ils sont à l'intérieur du disque. La fonction prendra en paramètre le centre et le rayon du disque.
 </details>
 
-#### ⭐ Dessiner un cercle
+#### ⭐ Cercle
 
 ![](output/circle.png)
 
 En reprenant et modifiant légèrement votre code pour le disque, écrivez le code qui donne un cercle. (Son contour aura une épaisseur donnée `thickness`).
 
-#### ⭐⭐⭐ Dessiner une rosace
+#### ⭐⭐⭐ Rosace
 
 ![](output/rosace.png)
 
@@ -319,7 +318,7 @@ Prendre un rectangle de pixels et l'intervertir avec un autre rectangle de pixel
 Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
 </details>
 
-### ⭐⭐⭐ Dessiner la fractale de Mandelbrot
+### ⭐⭐⭐ Fractale de Mandelbrot
 
 ![](output/mandelbrot.png)
 
@@ -357,7 +356,7 @@ Vous pouvez lire [ce super article](https://surma.dev/things/ditherpunk/) sur le
 
 Sur l'image ci-dessus j'ai utilisé de l'*ordered dithering* avec une matrice de Bayer 4x4 (a.k.a. de niveau 1). Tout est expliqué dans l'article ci-dessus ! (Plus précisément, j'ai repris la matrice et le code depuis [cet autre article](https://medium.com/the-bkpt/dithered-shading-tutorial-29f57d06ac39).)
 
-### ⭐⭐⭐(⭐) Histogram Equalization
+### ⭐⭐⭐(⭐) Normalisation de l'histogramme
 
 | ![](images/photo_faible_contraste.jpg)  | ![](output/normalize_histogram.jpg)  |
 |---|----|

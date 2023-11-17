@@ -6,3 +6,4 @@ void box_blur_separable_filter(sil::Image& image, int const kernel_size);
 void sharpen(sil::Image& image);
 void emboss(sil::Image& image);
 void outline(sil::Image& image);
+void difference_of_gaussians(sil::Image& image);
