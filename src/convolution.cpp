@@ -8,6 +8,11 @@ struct Kernel {
             vec.resize(height);
     }
 
+    Kernel(std::vector<std::vector<float>> kernel)
+        : values{kernel}
+    {
+    }
+
     std::vector<std::vector<float>> values;
 
     int width() const
@@ -100,4 +105,40 @@ void bokeh_blur(sil::Image& image, int const kernel_size)
         }
     }
     apply_kernel(image, kernel);
+}
+
+void sharpen(sil::Image& image)
+{
+    apply_kernel(
+        image,
+        Kernel{{
+            std::vector<float>{+0.f, -1.f, +0.f},
+            std::vector<float>{-1.f, +5.f, -1.f},
+            std::vector<float>{+0.f, -1.f, +0.f},
+        }}
+    );
+}
+
+void emboss(sil::Image& image)
+{
+    apply_kernel(
+        image,
+        Kernel{{
+            std::vector<float>{-2.f, -1.f, +0.f},
+            std::vector<float>{-1.f, +1.f, +1.f},
+            std::vector<float>{+0.f, +1.f, +2.f},
+        }}
+    );
+}
+
+void outline(sil::Image& image)
+{
+    apply_kernel(
+        image,
+        Kernel{{
+            std::vector<float>{-1.f, -1.f, -1.f},
+            std::vector<float>{-1.f, +8.f, -1.f},
+            std::vector<float>{-1.f, -1.f, -1.f},
+        }}
+    );
 }

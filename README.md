@@ -32,10 +32,10 @@
   - [⭐ Noir \& Blanc](#-noir--blanc)
   - [⭐ Channels swap](#-channels-swap)
   - [⭐ Négatif](#-négatif)
-  - [⭐⭐ Luminosité](#-luminosité)
   - [⭐⭐ Miroir](#-miroir)
   - [⭐⭐ Rotation de 90°](#-rotation-de-90)
   - [⭐⭐ Color glitch](#-color-glitch)
+  - [⭐⭐ Luminosité](#-luminosité)
   - [⭐⭐⭐ Position glitch](#-position-glitch)
   - [⭐⭐⭐ Vortex](#-vortex)
   - [⭐⭐ RGB split](#-rgb-split)
@@ -46,8 +46,7 @@
   - [⭐⭐⭐ Dessiner la fractale de Mandelbrot](#-dessiner-la-fractale-de-mandelbrot)
   - [⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
-    - [⭐⭐ Flou gaussien](#-flou-gaussien)
-    - [⭐⭐ Flou bokeh (appareil photo)](#-flou-bokeh-appareil-photo)
+    - [⭐ Netteté, Contours, etc.](#-netteté-contours-etc)
     - [⭐⭐ Separable filter](#-separable-filter)
       - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
   - [⭐⭐⭐(⭐) Histogram Equalization](#-histogram-equalization)
@@ -59,7 +58,6 @@
     - [⭐⭐ Colorer la height map](#-colorer-la-height-map)
   - [⭐⭐ Mosaic](#-mosaic)
     - [⭐⭐⭐ Mosaic flip](#-mosaic-flip)
-  - [⭐⭐⭐⭐⭐ Ray Tracing](#-ray-tracing)
 
 
 ## 📅 Planning
@@ -71,7 +69,7 @@
 - [ ] Présentation de moi
 - [ ] Présentation du projet
   - [ ] C'est quoi le sujet? -> faire des effets sur les images, comme on peut en trouver dans photoshop etc, filtre insta etc
-  - [ ] Par groupe de 2, et 1 groupe de 3 si impair
+  - [ ] Par groupe de 2, et 1 groupe de 3 si impair. Mais je veux que vous fassiez chacun des exercices de votre côté autant que possible, et que vous vous entraidiez au besoin. + pour l'exercice 3+ faites le à deux
   - [ ] Evaluation: min 1 exo de niveau 3 ou +, et autant du reste que possible. Montrez moi juste que vous êtes investies, 4h d'autonomie par jour c'est très bien. Posez un max de question, quand vous êtes bloquées et/ou par curiosité.
   - [ ] Je vous encourage à dans un premier temps essayer de faire chaque exercice sans regarder les indices, ni chercher sur internet / ChatGPT. Essayez de résoudre le problème par vous-même, ça aide à mieux le comprendre, puis apprécier et retenir la solution. + si vous réussissez seul.e, giga satisfaction. Les exos sont "faciles", c'est fait pour. Bien sûr que ChatGPT peut les résoudre, mais vous n'apprendrez rien si vous n'essayez pas par vous même. Et plutôt que ChatGPT, demandez moi en premier si possible, je pourrai mieux vous aiguiller / expliquez juste comme il faut pour que vous appreniez un max. Ou sinon demandez à vos camarades en deuxième solution (+ c'est un bon exercice d'expliquer donc vous rendez service à la fois à vous-même et à elleux)   
 - [ ] Présentation de la lib
@@ -81,7 +79,7 @@
 
 #### Élève
 
-- [ ] Création du groupe : binôme obligatoirement (et 1 trinôme dans la classe si impair)
+- [ ] Création du groupe : binôme obligatoirement (et 1 trinôme dans la classe si impair) mais je veux que vous fassiez chacun des exercices de votre côté autant que possible, et que vous vous entraidiez au besoin. + pour l'exercice 3+ faites le à deux
 - [ ] Prise en main de la lib
 - [ ] Quelques exercices de niveau 1 (⭐) et/ou 2 (⭐⭐)
 
@@ -143,7 +141,8 @@
 
 - [ ] Présentation de Markdown pour l'écriture du rapport
   - [ ] Extension VSCode, et comment elle permet de générer une Table of Content
-  - [ ] Syntaxe basique (titres, gras, italique), et si voulez vous pouvez aller voir comment [le document que vous êtes en train de lire](TODO mettre le lien du sujet qui est sur le git) est écrit, c'est du markdown !
+  - [ ] Syntaxe basique (titres, gras, italique, blocs de code, bloc quote, liste), et si voulez vous pouvez aller voir comment [le document que vous êtes en train de lire](TODO mettre le lien du sujet qui est sur le git) est écrit, c'est du markdown !
+  - [ ] [Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
   - [ ] Mettre des images (s'assurer du coup que leur dossier output soit à la racine du repo, et soit commit)
   - [ ] Vous pouvez mettre du html si vous voulez faire des trucs + avancés.
 
@@ -170,6 +169,8 @@ A faire en Markdown obligatoirement (si vous ne connaissez pas c'est l'occasion 
 A mettre directement en tant que readme à la racine du repo.
 
 Faite une section par exercice que vous avez fait. Montrez une image avant et après application de l'effet (comme c'est fait dans l'énoncé des exercices). Si vous jugez cela utile, vous pouvez mettre un petit texte expliquant des spécificités de l'algo que vous avez implémenté. (C'est surtout intéressant si vous avez fait des algos qui ne sont pas listés dans le sujet, et pour votre algo 3+).
+
+Mettez un lien vers votre git au début du rapport.
 
 ### Soutenance
 
@@ -211,21 +212,6 @@ Par exemple, échangez le canal rouge et le canal bleu.
 
 ![](output/negative.png)
 
-### ⭐⭐ Luminosité
-
-| ![](images/photo.jpg)  | ![](output/luminosity+.jpg)  |![](output/luminosity-.jpg)  |
-|---|----|----|
-| Image originale | Après éclaircissement | Après assombrissement |
-
-<details><summary>Indice</summary>
-On voudrait des courbes comme celles-ci, qui diminuent tous les nombres entre 0 et 1 (courbe bleue) (c-à-d assombrisse), ou les augmentent (courbe verte) (c-à-d éclaircisse), tout en gardant 0 à 0 et 1 à 1 (afin de garder la plage dynamique de l'image, pour conserver des noirs purs et des blancs purs).
-<img src ="image-1.png"/>
-</details>
-<details><summary>Indice 2</summary>
-Les fonctions puissance font exactement ce qu'on veut!<br/>
-La preuve: <a src="https://www.desmos.com/calculator/c3ztk51mng">https://www.desmos.com/calculator/c3ztk51mng</a>
-</details>
-
 ### ⭐⭐ Miroir
 
 ![](output/mirror.png)
@@ -245,6 +231,21 @@ La formule générique pour un angle quelconque est un peu plus compliquée, mai
 Remplacer quelques pixels au hasard par une couleur aléatoire.
 
 Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
+
+### ⭐⭐ Luminosité
+
+| ![](images/photo.jpg)  | ![](output/luminosity+.jpg)  |![](output/luminosity-.jpg)  |
+|---|----|----|
+| Image originale | Après éclaircissement | Après assombrissement |
+
+<details><summary>Indice</summary>
+On voudrait des courbes comme celles-ci, qui diminuent tous les nombres entre 0 et 1 (courbe bleue) (c-à-d assombrisse), ou les augmentent (courbe verte) (c-à-d éclaircisse), tout en gardant 0 à 0 et 1 à 1 (afin de garder la plage dynamique de l'image, pour conserver des noirs purs et des blancs purs).
+<img src ="image-1.png"/>
+</details>
+<details><summary>Indice 2</summary>
+Les fonctions puissance font exactement ce qu'on veut!<br/>
+La preuve: <a src="https://www.desmos.com/calculator/c3ztk51mng">https://www.desmos.com/calculator/c3ztk51mng</a>
+</details>
 
 ### ⭐⭐⭐ Position glitch
 
@@ -333,19 +334,30 @@ Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et util
 ### ⭐⭐⭐⭐ Convolutions
 
 ![](output/box_blur.png)
-Box blur
+*Box blur*
 
-#### ⭐⭐ Flou gaussien
+Les convolutions permettent d'implémenter plein d'effets (flou, détection de contour, augmentation de la netteté, etc.). L'effet va varier en fonction du *kernel* que vous utilisez lors de votre convolution. Tout est expliqué dans cette excellente vidéo, entre 1m10 et 4m18:
 
-#### ⭐⭐ Flou bokeh (appareil photo)
+[![convolution video](https://img.youtube.com/vi/8rrHTtUzyZA/0.jpg)](https://www.youtube.com/watch?v=8rrHTtUzyZA)
 
-![](output/bokeh_blur.png)
+Conseil: une fois que vous savez que votre algo marche, si vous voulez tester avec des kernels plus gros, ça peut être lent, donc vous avez intérêt à build en release et lancer sans debugger attaché (demandez-moi si vous ne savez pas comment faire).
+
+#### ⭐ Netteté, Contours, etc.
+
+| ![](output/emboss.png)  | ![](output/outline.png)  |![](output/sharpen.png)  |
+|---|----|----|
+| Emboss | Outline | Sharpen |
+
+Sur [ce site](https://setosa.io/ev/image-kernels/) vous pourrez trouver différents kernels pour faire différents effets.
+
 
 #### ⭐⭐ Separable filter
 
 https://youtu.be/SiJpkucGa1o
 
 ##### ⭐⭐ Difference of gaussians
+
+![](output/difference_of_gaussians.png)
 
 https://youtu.be/5EuYKEvugLU
 
@@ -390,7 +402,7 @@ Ensuite, au lieu de trier tous les pixels de l'image, triez par colonne (ou par 
 
 Pour trier un tableau, vous pouvez utiliser [`std::sort`](https://www.geeksforgeeks.org/sort-c-stl/).
 
-Plutôt que d'utiliser `get_pixel()` vous avez probablement intérêt à utiliser à utiliser `pixels()` pour récupérer le tableau contenant tous les pixels de l'image.
+Plutôt que d'utiliser `pixel(x, y)` vous avez probablement intérêt à utiliser à utiliser `pixels()` pour récupérer le tableau contenant tous les pixels de l'image.
 
 Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
 
@@ -408,7 +420,6 @@ Conseil: commencez par travailler sur une image toute petite (e.g. 17x17), afin 
 #### ⭐⭐ Colorer la height map
 
 ![](output/diamond_square_colored.png)
-
 
 <details><summary>Indice</summary>
 Avec `glm::mix(color1, color2, pourcentage);` vous pouvez faire un mélange entre deux couleurs données.
@@ -430,22 +441,3 @@ You can use a modulo (`%`) somewhere.
 Flip every other image:
 
 ![](output/mosaic_flip.png)
-
-### ⭐⭐⭐⭐⭐ Ray Tracing
-
-A minima une sphère et un shading basique.
-
-Pour calculer le shading pour une sphère :
-```cpp
-glm::vec3 const light_direction = glm::normalize(glm::vec3{1.f, 3.f, 10.f});
-glm::vec3 const light_color = glm::vec3(1.f, 1.f, 0.f);   // Yellow for the sun
-glm::vec3 const ambient_color = glm::vec3(0.f, 0.f, 1.f); // Slight blue for the sky
-
-glm::vec3 const normal = glm::normalize(intersection_point_with_the_sphere - center_of_the_sphere); // Attention cette formule ne marche que parce que c'est une sphère!
-float const light_intensity = std::clamp(glm::dot(light_direction, normal), 0.f, 1.f);
-glm::vec3 const final_color = ambient_color + light_intensity * light_color;
-```
-
-Voici une bonne vidéo expliquant les maths dont vous aurez besoin :
-
-[![raytracing video](https://img.youtube.com/vi/4NshnkzOdI0/0.jpg)](https://www.youtube.com/watch?v=4NshnkzOdI0)

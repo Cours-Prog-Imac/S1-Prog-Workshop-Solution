@@ -554,6 +554,21 @@ int main()
     }
     {
         sil::Image image{"images/logo.png"};
+        sharpen(image);
+        image.save("output/sharpen.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        emboss(image);
+        image.save("output/emboss.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        outline(image);
+        image.save("output/outline.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
         rgb_split(image);
         image.save("output/rgb_split.png");
     }
