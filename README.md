@@ -306,7 +306,7 @@ Une manière concise de faire ça est d'utiliser un modulo (`%`) quelque part.
 
 Inversez une image sur deux:
 
-![](output/mosaic_flip.png)
+![](output/mosaic_mirror.png)
 
 ### ⭐⭐⭐ Glitch
 

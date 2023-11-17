@@ -23,7 +23,7 @@ static int flip_at_middle(int x, int middle)
     return x;
 }
 
-sil::Image mosaic_flip(sil::Image const& image)
+sil::Image mosaic_mirror(sil::Image const& image)
 {
     sil::Image result{image.width() * 5, image.height() * 5};
     for (int x{0}; x < result.width(); x++)

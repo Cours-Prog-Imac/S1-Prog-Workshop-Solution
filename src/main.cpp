@@ -33,13 +33,13 @@ int main()
     }
     {
         sil::Image image{"images/logo.png"};
-        black_and_white(image);
-        image.save("output/black_and_white.png");
+        channels_swap(image);
+        image.save("output/channels_swap.png");
     }
     {
         sil::Image image{"images/logo.png"};
-        channels_swap(image);
-        image.save("output/channels_swap.png");
+        black_and_white(image);
+        image.save("output/black_and_white.png");
     }
     {
         sil::Image image{"images/logo.png"};
@@ -47,19 +47,39 @@ int main()
         image.save("output/negative.png");
     }
     {
-        sil::Image image{"images/logo.png"};
-        image = mosaic(image);
-        image.save("output/mosaic.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        image = mosaic_flip(image);
-        image.save("output/mosaic_flip.png");
-    }
-    {
         sil::Image image{300, 200};
         gradient(image);
         image.save("output/gradient.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        mirror(image);
+        image.save("output/mirror.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        noisy_image(image);
+        image.save("output/noisy_image.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        image = rotate_90_degrees(image);
+        image.save("output/rotate_90_degrees.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        rgb_split(image);
+        image.save("output/rgb_split.png");
+    }
+    {
+        sil::Image image{"images/photo.jpg"};
+        luminosity(image, 1.f / 1.25f);
+        image.save("output/luminosity+.jpg");
+    }
+    {
+        sil::Image image{"images/photo.jpg"};
+        luminosity(image, 1.25f);
+        image.save("output/luminosity-.jpg");
     }
     {
         sil::Image image{500, 500};
@@ -77,18 +97,82 @@ int main()
         image.save("output/rosace.png");
     }
     {
+        sil::Image image{"images/logo.png"};
+        image = mosaic(image);
+        image.save("output/mosaic.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        image = mosaic_mirror(image);
+        image.save("output/mosaic_mirror.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        glitch(image);
+        image.save("output/glitch.png");
+    }
+    {
         sil::Image image = mandelbrot();
         image.save("output/mandelbrot.png");
     }
     {
-        sil::Image image{"images/photo.jpg"};
-        luminosity(image, 1.f / 1.25f);
-        image.save("output/luminosity+.jpg");
+        sil::Image image{"images/logo.png"};
+        vortex(image);
+        image.save("output/vortex.png");
     }
     {
         sil::Image image{"images/photo.jpg"};
-        luminosity(image, 1.25f);
-        image.save("output/luminosity-.jpg");
+        ordered_dithering(image);
+        image.save("output/ordered_dithering.png");
+    }
+    {
+        sil::Image image{"images/photo_faible_contraste.jpg"};
+        normalize_histogram(image);
+        image.save("output/normalize_histogram.jpg");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        box_blur(image, 20);
+        image.save("output/box_blur.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        sharpen(image);
+        image.save("output/sharpen.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        emboss(image);
+        image.save("output/emboss.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        outline(image);
+        image.save("output/outline.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        auto const begin = std::chrono::steady_clock::now();
+        box_blur(image, 100);
+        std::cout << "Naive box blur took " << (std::chrono::steady_clock::now() - begin).count() / 1000000000.f << " seconds.\n";
+        image.save("output/big_box_blur.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        auto const begin = std::chrono::steady_clock::now();
+        box_blur_separable_filter(image, 100);
+        std::cout << "Separated box blur took " << (std::chrono::steady_clock::now() - begin).count() / 1000000000.f << " seconds.\n";
+        image.save("output/big_box_blur_separable_filter.png");
+    }
+    {
+        sil::Image image{"images/photo.jpg"};
+        difference_of_gaussians(image);
+        image.save("output/difference_of_gaussians.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        pixel_sorting(image);
+        image.save("output/pixel_sorting.png");
     }
     {
         sil::Image image{"images/photo.jpg"};
@@ -111,95 +195,11 @@ int main()
         image.save("output/k_means_16_colors.jpg");
     }
     {
-        sil::Image image{"images/logo.png"};
-        pixel_sorting(image);
-        image.save("output/pixel_sorting.png");
-    }
-    {
-        sil::Image image{"images/photo_faible_contraste.jpg"};
-        normalize_histogram(image);
-        image.save("output/normalize_histogram.jpg");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        box_blur(image, 20);
-        image.save("output/box_blur.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        auto const begin = std::chrono::steady_clock::now();
-        box_blur(image, 100);
-        std::cout << "Naive box blur took " << (std::chrono::steady_clock::now() - begin).count() / 1000000000.f << " seconds.\n";
-        image.save("output/big_box_blur.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        auto const begin = std::chrono::steady_clock::now();
-        box_blur_separable_filter(image, 100);
-        std::cout << "Separated box blur took " << (std::chrono::steady_clock::now() - begin).count() / 1000000000.f << " seconds.\n";
-        image.save("output/big_box_blur_separable_filter.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        sharpen(image);
-        image.save("output/sharpen.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        emboss(image);
-        image.save("output/emboss.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        outline(image);
-        image.save("output/outline.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        rgb_split(image);
-        image.save("output/rgb_split.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        mirror(image);
-        image.save("output/mirror.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        image = rotate_90_degrees(image);
-        image.save("output/rotate_90_degrees.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        noisy_image(image);
-        image.save("output/noisy_image.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        glitch(image);
-        image.save("output/glitch.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        vortex(image);
-        image.save("output/vortex.png");
-    }
-    {
-        sil::Image image{"images/photo.jpg"};
-        ordered_dithering(image);
-        image.save("output/ordered_dithering.png");
-    }
-    {
         set_random_seed(2000); // A seed that looks good for our map
         sil::Image image{513, 513};
         diamond_square(image);
         image.save("output/diamond_square_greyscale.png");
         colorize_heightmap(image);
         image.save("output/diamond_square_colored.png");
-    }
-    {
-        sil::Image image{"images/photo.jpg"};
-        difference_of_gaussians(image);
-        image.save("output/difference_of_gaussians.png");
     }
 }
