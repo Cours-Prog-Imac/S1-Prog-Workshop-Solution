@@ -72,9 +72,9 @@ static void apply_kernel(sil::Image& image, Kernel const& kernel)
 void box_blur(sil::Image& image, int const kernel_size)
 {
     Kernel kernel{kernel_size, kernel_size};
-    for (int x = 0; x < kernel.width(); ++x)
+    for (int x{0}; x < kernel.width(); ++x)
     {
-        for (int y = 0; y < kernel.height(); ++y)
+        for (int y{0}; y < kernel.height(); ++y)
         {
             kernel.at(x, y) = 1.f / static_cast<float>(kernel.width()) / static_cast<float>(kernel.height());
         }
@@ -82,29 +82,20 @@ void box_blur(sil::Image& image, int const kernel_size)
     apply_kernel(image, kernel);
 }
 
-void bokeh_blur(sil::Image& image, int const kernel_size)
+void box_blur_separable_filter(sil::Image& image, int const kernel_size)
 {
-    Kernel kernel{kernel_size, kernel_size};
-    int    count{0};
-    for (int x = 0; x < kernel_size; ++x)
+    Kernel kernel_x{kernel_size, 1};
+    Kernel kernel_y{1, kernel_size};
+    for (int x{0}; x < kernel_size; ++x)
     {
-        for (int y = 0; y < kernel_size; ++y)
-        {
-            if (glm::distance(glm::vec2{x, y}, glm::vec2{kernel_size / 2.f}) < kernel_size / 2.f)
-            {
-                kernel.at(x, y) = 1.f;
-                count += 1;
-            }
-        }
+        kernel_x.at(x, 0) = 1.f / static_cast<float>(kernel_size);
     }
-    for (int x = 0; x < kernel.width(); ++x)
+    for (int y{0}; y < kernel_size; ++y)
     {
-        for (int y = 0; y < kernel.height(); ++y)
-        {
-            kernel.at(x, y) /= static_cast<float>(count);
-        }
+        kernel_y.at(0, y) = 1.f / static_cast<float>(kernel_size);
     }
-    apply_kernel(image, kernel);
+    apply_kernel(image, kernel_x);
+    apply_kernel(image, kernel_y);
 }
 
 void sharpen(sil::Image& image)

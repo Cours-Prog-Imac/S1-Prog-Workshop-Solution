@@ -47,11 +47,11 @@
   - [⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐ Netteté, Contours, etc.](#-netteté-contours-etc)
-    - [⭐⭐ Separable filter](#-separable-filter)
-      - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
+    - [⭐⭐ Filtres séparables](#-filtres-séparables)
+    - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
   - [⭐⭐⭐(⭐) Histogram Equalization](#-histogram-equalization)
   - [Feel free to implement your own effects!](#feel-free-to-implement-your-own-effects)
-  - [⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture)](#-filtre-de-kuwahara-effet-peinture)
+  - [⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture à l'huile)](#-filtre-de-kuwahara-effet-peinture-à-lhuile)
   - [⭐⭐⭐ Tramage](#-tramage)
   - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
   - [⭐⭐⭐⭐⭐⭐ Diamond Square](#-diamond-square)
@@ -350,12 +350,18 @@ Conseil: une fois que vous savez que votre algo marche, si vous voulez tester av
 
 Sur [ce site](https://setosa.io/ev/image-kernels/) vous pourrez trouver différents kernels pour faire différents effets.
 
+#### ⭐⭐ Filtres séparables
 
-#### ⭐⭐ Separable filter
+| Box blur naïf, 100x100  | Box blur séparé, 100x100 |
+|---|----|
+| ![](output/big_box_blur.png) | ![](output/big_box_blur_separable_filter.png) |
+| 7.44 secondes | 0.18 secondes |
 
-https://youtu.be/SiJpkucGa1o
+Quand vous voulez faire un gros flou il faut augmenter la taille du kernel, ce qui peut considérablement ralentir l'algorithme. Heureusement, certains kernels ont une propriété qui nous permet de calculer leur convolution **BEAUCOUP** plus rapidement. Le *box blur* et le *gaussian blur* sont de tels kernels. Voici une vidéo expliquant tout ça:
 
-##### ⭐⭐ Difference of gaussians
+[![separable filters video](https://img.youtube.com/vi/SiJpkucGa1o/0.jpg)](https://www.youtube.com/watch?v=SiJpkucGa1o)
+
+#### ⭐⭐ Difference of gaussians
 
 ![](output/difference_of_gaussians.png)
 
@@ -374,7 +380,7 @@ Amélioration du contraste, en calculant la luminosité min et max, et en appliq
 
 ### Feel free to implement your own effects!
 
-### ⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture)
+### ⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture à l'huile)
 
 ![](output/kuwahara.jpg)
 

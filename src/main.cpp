@@ -1,5 +1,7 @@
 #include <algorithm>
+#include <chrono>
 #include <complex>
+#include <iostream>
 #include <limits>
 #include <sil/sil.hpp>
 #include "convolution.hpp"
@@ -554,6 +556,20 @@ int main()
     }
     {
         sil::Image image{"images/logo.png"};
+        auto const begin = std::chrono::steady_clock::now();
+        box_blur(image, 100);
+        std::cout << "Naive box blur took " << (std::chrono::steady_clock::now() - begin).count() / 1000000000.f << " seconds.\n";
+        image.save("output/big_box_blur.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
+        auto const begin = std::chrono::steady_clock::now();
+        box_blur_separable_filter(image, 100);
+        std::cout << "Separated box blur took " << (std::chrono::steady_clock::now() - begin).count() / 1000000000.f << " seconds.\n";
+        image.save("output/big_box_blur_separable_filter.png");
+    }
+    {
+        sil::Image image{"images/logo.png"};
         sharpen(image);
         image.save("output/sharpen.png");
     }
@@ -596,11 +612,6 @@ int main()
         sil::Image image{"images/logo.png"};
         vortex(image);
         image.save("output/vortex.png");
-    }
-    {
-        sil::Image image{"images/logo.png"};
-        bokeh_blur(image, 20);
-        image.save("output/bokeh_blur.png");
     }
     {
         sil::Image image{"images/photo.jpg"};
