@@ -452,6 +452,28 @@ void ordered_dithering(sil::Image& image)
     }
 }
 
+void difference_of_gaussians(sil::Image& image)
+{
+    float const details{5.f};
+    float const line_thickness{0.15f};
+    float const sharpness{1000.f};
+    black_and_white(image);
+    sil::Image img1{image};
+    sil::Image img2{image};
+    box_blur_separable_filter(img1, 3);
+    box_blur_separable_filter(img2, 10);
+    for (int x{0}; x < image.width(); ++x)
+    {
+        for (int y{0}; y < image.height(); ++y)
+        {
+            image.pixel(x, y) = (1.f + details) * img1.pixel(x, y) - details * img2.pixel(x, y);
+            image.pixel(x, y) = image.pixel(x, y).r > line_thickness
+                                    ? glm::vec3{1.f}
+                                    : glm::vec3{1 + std::tanh(sharpness * (image.pixel(x, y).r - line_thickness))};
+        }
+    }
+}
+
 int main()
 {
     set_random_seed(1234); // Arbitrary number, guarantees that the artworks that depend on random will be the same every run (helps me check that my algorithm produces the same result when I tweak it).
@@ -625,5 +647,10 @@ int main()
         image.save("output/diamond_square_greyscale.png");
         colorize_heightmap(image);
         image.save("output/diamond_square_colored.png");
+    }
+    {
+        sil::Image image{"images/photo.jpg"};
+        difference_of_gaussians(image);
+        image.save("output/difference_of_gaussians.png");
     }
 }

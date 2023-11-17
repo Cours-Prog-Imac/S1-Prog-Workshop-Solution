@@ -48,7 +48,7 @@
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐ Netteté, Contours, etc.](#-netteté-contours-etc)
     - [⭐⭐ Filtres séparables](#-filtres-séparables)
-    - [⭐⭐ Difference of gaussians](#-difference-of-gaussians)
+    - [⭐⭐ Différence de gaussiennes](#-différence-de-gaussiennes)
   - [⭐⭐⭐(⭐) Histogram Equalization](#-histogram-equalization)
   - [Feel free to implement your own effects!](#feel-free-to-implement-your-own-effects)
   - [⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture à l'huile)](#-filtre-de-kuwahara-effet-peinture-à-lhuile)
@@ -361,13 +361,16 @@ Quand vous voulez faire un gros flou il faut augmenter la taille du kernel, ce q
 
 [![separable filters video](https://img.youtube.com/vi/SiJpkucGa1o/0.jpg)](https://www.youtube.com/watch?v=SiJpkucGa1o)
 
-#### ⭐⭐ Difference of gaussians
+#### ⭐⭐ Différence de gaussiennes
 
 ![](output/difference_of_gaussians.png)
 
-https://youtu.be/5EuYKEvugLU
+Voici une vidéo expliquant l'algorithme:
 
-Ne faire que le début ça suffit, jusqu'à 4m09.
+- **NB 1:** Il parle de flou gaussien, mais vous pouvez tout aussi bien réutiliser votre box blur, pas la peine d'implémenter un flou gaussien.
+- **NB 2:** Ne faire que l'algo de base, présenté jusqu'à 4m09. Après ça ça devient très compliqué (mais très stylé néanmoins).
+
+[![difference of gaussians video](https://img.youtube.com/vi/5EuYKEvugLU/0.jpg)](https://www.youtube.com/watch?v=5EuYKEvugLU)
 
 ### ⭐⭐⭐(⭐) Histogram Equalization
 
