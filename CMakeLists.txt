@@ -12,9 +12,9 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_EXTENSIONS OFF)
 
 # Add all the source files
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/* lib/*)
 target_sources(${PROJECT_NAME} PRIVATE ${SOURCES})
-target_include_directories(${PROJECT_NAME} PRIVATE src)
+target_include_directories(${PROJECT_NAME} PRIVATE src lib)
 
 # Download the sil library
 include(FetchContent)
