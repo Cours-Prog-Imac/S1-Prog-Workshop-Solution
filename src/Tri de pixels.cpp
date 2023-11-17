@@ -1,4 +1,5 @@
 #include "Tri de pixels.hpp"
+#include <algorithm>
 #include "random.hpp"
 
 void pixel_sorting(sil::Image& image)
