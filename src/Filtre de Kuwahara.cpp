@@ -1,4 +1,5 @@
 #include "Filtre de Kuwahara.hpp"
+#include <algorithm>
 
 sil::Image kuwahara(sil::Image const& image, int const square_size)
 {

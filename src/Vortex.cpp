@@ -1,4 +1,5 @@
 #include "Vortex.hpp"
+#include <algorithm>
 #include "glm/gtx/matrix_transform_2d.hpp"
 
 void vortex(sil::Image& image)
