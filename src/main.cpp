@@ -364,7 +364,7 @@ void k_means(sil::Image& image, int nb_colors)
     }
 }
 
-void color_glitch(sil::Image& image)
+void noisy_image(sil::Image& image)
 {
     for (glm::vec3& color : image.pixels())
     {
@@ -378,7 +378,7 @@ void color_glitch(sil::Image& image)
     }
 }
 
-void position_glitch(sil::Image& image)
+void glitch(sil::Image& image)
 {
     int const nb_squares{100};
 
@@ -622,13 +622,13 @@ int main()
     }
     {
         sil::Image image{"images/logo.png"};
-        color_glitch(image);
-        image.save("output/color_glitch.png");
+        noisy_image(image);
+        image.save("output/noisy_image.png");
     }
     {
         sil::Image image{"images/logo.png"};
-        position_glitch(image);
-        image.save("output/position_glitch.png");
+        glitch(image);
+        image.save("output/glitch.png");
     }
     {
         sil::Image image{"images/logo.png"};

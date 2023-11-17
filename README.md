@@ -29,36 +29,35 @@
   - [Détails techniques](#détails-techniques)
 - [💻 Exercices](#-exercices)
   - [⭐ Ne garder que le vert](#-ne-garder-que-le-vert)
+  - [⭐ Échanger les canaux](#-échanger-les-canaux)
   - [⭐ Noir \& Blanc](#-noir--blanc)
-  - [⭐ Channels swap](#-channels-swap)
   - [⭐ Négatif](#-négatif)
-  - [⭐⭐ Miroir](#-miroir)
-  - [⭐⭐ Rotation de 90°](#-rotation-de-90)
-  - [⭐⭐ Color glitch](#-color-glitch)
-  - [⭐⭐ Luminosité](#-luminosité)
-  - [⭐⭐⭐ Position glitch](#-position-glitch)
-  - [⭐⭐⭐ Vortex](#-vortex)
-  - [⭐⭐ RGB split](#-rgb-split)
   - [⭐ Dessiner un dégradé](#-dessiner-un-dégradé)
+  - [⭐⭐ Miroir](#-miroir)
+  - [⭐⭐ Image bruitée](#-image-bruitée)
+  - [⭐⭐ Rotation de 90°](#-rotation-de-90)
+  - [⭐⭐ RGB split](#-rgb-split)
+  - [⭐⭐ Luminosité](#-luminosité)
   - [⭐⭐ Dessiner un disque](#-dessiner-un-disque)
     - [⭐ Dessiner un cercle](#-dessiner-un-cercle)
     - [⭐⭐⭐ Dessiner une rosace](#-dessiner-une-rosace)
+  - [⭐⭐ Mosaïque](#-mosaïque)
+    - [⭐⭐⭐ Mosaïque miroir](#-mosaïque-miroir)
+  - [⭐⭐⭐ Glitch](#-glitch)
   - [⭐⭐⭐ Dessiner la fractale de Mandelbrot](#-dessiner-la-fractale-de-mandelbrot)
-  - [⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
+  - [⭐⭐⭐ Vortex](#-vortex)
+  - [⭐⭐⭐(⭐) Tramage](#-tramage)
+  - [⭐⭐⭐(⭐) Histogram Equalization](#-histogram-equalization)
   - [⭐⭐⭐⭐ Convolutions](#-convolutions)
     - [⭐ Netteté, Contours, etc.](#-netteté-contours-etc)
     - [⭐⭐ Filtres séparables](#-filtres-séparables)
     - [⭐⭐ Différence de gaussiennes](#-différence-de-gaussiennes)
-  - [⭐⭐⭐(⭐) Histogram Equalization](#-histogram-equalization)
-  - [Feel free to implement your own effects!](#feel-free-to-implement-your-own-effects)
+  - [⭐⭐⭐⭐ Tri de pixels](#-tri-de-pixels)
   - [⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture à l'huile)](#-filtre-de-kuwahara-effet-peinture-à-lhuile)
-  - [⭐⭐⭐ Tramage](#-tramage)
-  - [⭐⭐⭐⭐ Pixel sorting](#-pixel-sorting)
+  - [⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image](#-k-means--trouver-les-couleurs-les-plus-présentes-dans-une-image)
   - [⭐⭐⭐⭐⭐⭐ Diamond Square](#-diamond-square)
     - [⭐⭐ Colorer la height map](#-colorer-la-height-map)
-  - [⭐⭐ Mosaic](#-mosaic)
-    - [⭐⭐⭐ Mosaic flip](#-mosaic-flip)
-
+  - [Vous pouvez implémenter vos propres effets !](#vous-pouvez-implémenter-vos-propres-effets-)
 
 ## 📅 Planning
 
@@ -196,82 +195,24 @@ Nous utiliserons la librairie *sil* pour lire, éditer et re-sauvegarder les ima
 Mettre le rouge et le bleu à 0.
 </details>
 
-### ⭐ Noir & Blanc
-
-![](output/black_and_white.png)
-
-N'hésitez pas à **aller chercher la formule sur internet** si besoin !
-
-### ⭐ Channels swap
+### ⭐ Échanger les canaux
 
 ![](output/channels_swap.png)
 
 Par exemple, échangez le canal rouge et le canal bleu.
 
+### ⭐ Noir & Blanc
+
+![](output/black_and_white.png)
+
+<details><summary>Indice</summary>
+
+N'hésitez pas à **aller chercher la formule sur internet** si besoin !
+</details>
+
 ### ⭐ Négatif
 
 ![](output/negative.png)
-
-### ⭐⭐ Miroir
-
-![](output/mirror.png)
-
-Symétrie par rapport à l'axe Y (vertical).
-
-### ⭐⭐ Rotation de 90°
-
-![](output/rotate_90_degrees.png)
-
-La formule générique pour un angle quelconque est un peu plus compliquée, mais pour 90° il y a une formule vraiment simple, essayez de la trouver !
-
-### ⭐⭐ Color glitch
-
-![](output/color_glitch.png)
-
-Remplacer quelques pixels au hasard par une couleur aléatoire.
-
-Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
-
-### ⭐⭐ Luminosité
-
-| ![](images/photo.jpg)  | ![](output/luminosity+.jpg)  |![](output/luminosity-.jpg)  |
-|---|----|----|
-| Image originale | Après éclaircissement | Après assombrissement |
-
-<details><summary>Indice</summary>
-On voudrait des courbes comme celles-ci, qui diminuent tous les nombres entre 0 et 1 (courbe bleue) (c-à-d assombrisse), ou les augmentent (courbe verte) (c-à-d éclaircisse), tout en gardant 0 à 0 et 1 à 1 (afin de garder la plage dynamique de l'image, pour conserver des noirs purs et des blancs purs).
-<img src ="image-1.png"/>
-</details>
-<details><summary>Indice 2</summary>
-Les fonctions puissance font exactement ce qu'on veut!<br/>
-La preuve: <a src="https://www.desmos.com/calculator/c3ztk51mng">https://www.desmos.com/calculator/c3ztk51mng</a>
-</details>
-
-### ⭐⭐⭐ Position glitch
-
-![](output/position_glitch.png)
-
-Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
-
-<details><summary>Indice</summary>
-Prendre un rectangle de pixels et l'intervertir avec un autre rectangle de pixels, ailleurs dans l'image. Faire ça plusieurs fois.
-</details>
-
-### ⭐⭐⭐ Vortex
-
-![](output/vortex.png)
-
-<details><summary>Indice</summary>
-Chaque pixel subit une rotation, de plus en plus importante au fur et à mesure qu'on s'éloigne du centre.
-</details>
-
-### ⭐⭐ RGB split
-
-![](output/rgb_split.png)
-
-⚠️ Créez une nouvelle image et travaillez sur celle-ci. Il ne faut pas modifier l'image originale pendant que vous bouclez pour appliquer l'effet, sinon certains pixels n'utiliseront pas la bonne couleur de l'image originale, mais plutôt la couleur déjà modifiée par un pixel précédent, ce qui pourrait vous donner ce genre de rendu moins intéressant :
-
-![](output/rgb_split_incorrect.png)
 
 ### ⭐ Dessiner un dégradé
 
@@ -282,6 +223,51 @@ Vous pouvez créer une image noire avec
 sil::Image image{300/*width*/, 200/*height*/};
 ```
 puis itérer sur les pixels pour les colorer.
+
+### ⭐⭐ Miroir
+
+![](output/mirror.png)
+
+Symétrie par rapport à l'axe Y (vertical).
+
+### ⭐⭐ Image bruitée
+
+![](output/noisy_image.png)
+
+Remplacer quelques pixels au hasard par une couleur aléatoire.
+
+Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
+
+### ⭐⭐ Rotation de 90°
+
+![](output/rotate_90_degrees.png)
+
+La formule générique pour un angle quelconque est un peu plus compliquée, mais pour 90° il y a une formule vraiment simple, essayez de la trouver !
+
+### ⭐⭐ RGB split
+
+![](output/rgb_split.png)
+
+⚠️ Créez une nouvelle image et travaillez sur celle-ci. Il ne faut pas modifier l'image originale pendant que vous bouclez pour appliquer l'effet, sinon certains pixels n'utiliseront pas la bonne couleur de l'image originale, mais plutôt la couleur déjà modifiée par un pixel précédent, ce qui pourrait vous donner ce genre de rendu moins intéressant :
+
+![](output/rgb_split_incorrect.png)
+
+### ⭐⭐ Luminosité
+
+| ![](images/photo.jpg)  | ![](output/luminosity+.jpg)  |![](output/luminosity-.jpg)  |
+|---|----|----|
+| Image originale | Après éclaircissement | Après assombrissement |
+
+<details><summary>Indice</summary>
+
+On voudrait des courbes comme celles-ci, qui diminuent tous les nombres entre 0 et 1 (courbe bleue) (c-à-d assombrisse), ou les augmentent (courbe verte) (c-à-d éclaircisse), tout en gardant 0 à 0 et 1 à 1 (afin de garder la plage dynamique de l'image, pour conserver des noirs purs et des blancs purs).
+![](image-1.png)
+</details>
+<details><summary>Indice 2</summary>
+
+Les fonctions puissance font exactement ce qu'on veut!
+La preuve: https://www.desmos.com/calculator/c3ztk51mng
+</details>
 
 ### ⭐⭐ Dessiner un disque
 
@@ -309,27 +295,76 @@ En reprenant et modifiant légèrement votre code pour le disque, écrivez le co
 Maintenant que vous savez dessiner un cercle, dessinez-en plusieurs sur la même image, à des positions bien choisies, de sorte à dessiner une rosace.
 (PS: il va surement falloir faire de la trigo!)
 
+### ⭐⭐ Mosaïque
+
+![](output/mosaic.png)
+
+<details><summary>Indice</summary>
+Une manière concise de faire ça est d'utiliser un modulo (`%`) quelque part.
+</details>
+
+#### ⭐⭐⭐ Mosaïque miroir
+
+Inversez une image sur deux:
+
+![](output/mosaic_flip.png)
+
+### ⭐⭐⭐ Glitch
+
+![](output/glitch.png)
+
+<details><summary>Indice</summary>
+Prendre un rectangle de pixels et l'intervertir avec un autre rectangle de pixels, ailleurs dans l'image. Faire ça plusieurs fois.
+
+Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
+</details>
+
 ### ⭐⭐⭐ Dessiner la fractale de Mandelbrot
 
 ![](output/mandelbrot.png)
 
+TODO expliquer ce que c'est
+
+Conseil: vous pouvez inclure le header `<complex>` pour utiliser des nombres complexes. Un nombre complexe se définit comme ça:
+```cpp
+#include <complex>
+int main()
+{
+    // Définis le nombre z = 3 + 2*i
+    std::complex<float> z{3.f, 2.f};
+}
+```
+et s'utilise comme un nombre normal: vous pouvez faire des additions, multiplications etc.
+
 <details><summary>Indice</summary>
+
 Définir un nombre max d'itérations, itérer `z <- z * z + c` jusqu'à ce qu'on dépasse ce nombre d'itérations ou que la norme de z soit > 2, puis assigner une couleur en fonction du nombre d'itérations qu'on a fait avant de sortir de la boucle.
 </details>
 
-### ⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image
+### ⭐⭐⭐ Vortex
 
-| ![](images/photo.jpg)  | ![](output/k_means_2_colors.jpg) | ![](output/k_means_3_colors.jpg)  | ![](output/k_means_16_colors.jpg)  |
-|---|----|----|----|
-| Originale | 2 couleurs | 3 couleurs | 16 couleurs |
+![](output/vortex.png)
 
-Trouvez les k couleurs les plus représentatives de l'image, puis assignez à chaque pixel la couleur dont il est le plus proche parmi les k.
+<details><summary>Indice</summary>
+Chaque pixel subit une rotation, de plus en plus importante au fur et à mesure qu'on s'éloigne du centre.
+</details>
 
-Voici une bonne vidéo expliquant l'algorithme :
+### ⭐⭐⭐(⭐) Tramage
 
-[![k-means video](https://img.youtube.com/vi/yR7k19YBqiw/0.jpg)](https://www.youtube.com/watch?v=yR7k19YBqiw)
+![](output/ordered_dithering.png)
 
-Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
+Vous pouvez lire [ce super article](https://surma.dev/things/ditherpunk/) sur le tramage (a.k.a. *dithering* en anglais).
+
+Sur l'image ci-dessus j'ai utilisé de l'*ordered dithering* avec une matrice de Bayer 4x4 (a.k.a. de niveau 1). Tout est expliqué dans l'article ci-dessus ! (Plus précisément, j'ai repris la matrice et le code depuis [cet autre article](https://medium.com/the-bkpt/dithered-shading-tutorial-29f57d06ac39).)
+
+### ⭐⭐⭐(⭐) Histogram Equalization
+
+| ![](images/photo_faible_contraste.jpg)  | ![](output/normalize_histogram.jpg)  |
+|---|----|
+| Avant | Après |
+
+Amélioration du contraste, en calculant la luminosité min et max, et en appliquant une transformation qui va mapper le plus sombre à 0 et le plus clair à 1.
+(PS: testez avec l'image "images/photo_faible_contraste.jpg", vous verrez bien l'intérêt de l'effet.)
 
 ### ⭐⭐⭐⭐ Convolutions
 
@@ -372,34 +407,7 @@ Voici une vidéo expliquant l'algorithme:
 
 [![difference of gaussians video](https://img.youtube.com/vi/5EuYKEvugLU/0.jpg)](https://www.youtube.com/watch?v=5EuYKEvugLU)
 
-### ⭐⭐⭐(⭐) Histogram Equalization
-
-| ![](images/photo_faible_contraste.jpg)  | ![](output/normalize_histogram.jpg)  |
-|---|----|
-| Avant | Après |
-
-Amélioration du contraste, en calculant la luminosité min et max, et en appliquant une transformation qui va mapper le plus sombre à 0 et le plus clair à 1.
-(PS: testez avec l'image "images/photo_faible_contraste.jpg", vous verrez bien l'intérêt de l'effet.)
-
-### Feel free to implement your own effects!
-
-### ⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture à l'huile)
-
-![](output/kuwahara.jpg)
-
-https://youtu.be/LDhN-JK3U9g
-
-(Juste la version simple, qui est expliquée entre 3:11 et 3:30, suffit. Si vous voulez aller plus loin, vous êtes les bienvenu.es bien sûr 😉)
-
-### ⭐⭐⭐ Tramage
-
-![](output/ordered_dithering.png)
-
-Vous pouvez lire [ce super article](https://surma.dev/things/ditherpunk/) sur le tramage (a.k.a. *dithering* en anglais).
-
-Sur l'image ci-dessus j'ai utilisé de l'*ordered dithering* avec une matrice de Bayer 4x4 (a.k.a. de niveau 1). Tout est expliqué dans l'article ci-dessus ! (Plus précisément, j'ai repris la matrice et le code depuis [cet autre article](https://medium.com/the-bkpt/dithered-shading-tutorial-29f57d06ac39).)
-
-### ⭐⭐⭐⭐ Pixel sorting
+### ⭐⭐⭐⭐ Tri de pixels
 
 ![](output/pixel_sorting.png)
 
@@ -412,6 +420,28 @@ Ensuite, au lieu de trier tous les pixels de l'image, triez par colonne (ou par 
 Pour trier un tableau, vous pouvez utiliser [`std::sort`](https://www.geeksforgeeks.org/sort-c-stl/).
 
 Plutôt que d'utiliser `pixel(x, y)` vous avez probablement intérêt à utiliser à utiliser `pixels()` pour récupérer le tableau contenant tous les pixels de l'image.
+
+Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
+
+### ⭐⭐⭐⭐⭐ Filtre de Kuwahara (effet peinture à l'huile)
+
+![](output/kuwahara.jpg)
+
+https://youtu.be/LDhN-JK3U9g
+
+(Juste la version simple, qui est expliquée entre 3:11 et 3:30, suffit. Si vous voulez aller plus loin, vous êtes les bienvenu.es bien sûr 😉)
+
+### ⭐⭐⭐⭐⭐ K-means : trouver les couleurs les plus présentes dans une image
+
+| ![](images/photo.jpg)  | ![](output/k_means_2_colors.jpg) | ![](output/k_means_3_colors.jpg)  | ![](output/k_means_16_colors.jpg)  |
+|---|----|----|----|
+| Originale | 2 couleurs | 3 couleurs | 16 couleurs |
+
+Trouvez les k couleurs les plus représentatives de l'image, puis assignez à chaque pixel la couleur dont il est le plus proche parmi les k.
+
+Voici une bonne vidéo expliquant l'algorithme :
+
+[![k-means video](https://img.youtube.com/vi/yR7k19YBqiw/0.jpg)](https://www.youtube.com/watch?v=yR7k19YBqiw)
 
 Pour obtenir des nombres aléatoires, includez le fichier `"random.hpp"` et utilisez soit `random_int(min, max)` soit `random_float(min, max)`. Si vous voulez que votre programme utilise les mêmes nombres aléatoires à chaque fois que vous l'utilisez, vous pouvez définir une seed avec `set_random_seed(0)` au début de votre `main()` (vous pouvez passer n'importe quel nombre autre que 0, ça définira quels seront les nombres générés par les fonctions random).
 
@@ -431,22 +461,12 @@ Conseil: commencez par travailler sur une image toute petite (e.g. 17x17), afin 
 ![](output/diamond_square_colored.png)
 
 <details><summary>Indice</summary>
+
 Avec `glm::mix(color1, color2, pourcentage);` vous pouvez faire un mélange entre deux couleurs données.
 </details>
 <details><summary>Indice 2</summary>
+
 Essayez par exemple de faire un dégradé de bleu quand le niveau de gris est entre 0 et 0.5, et un dégradé entre du vert et du marron quand le niveau de gris est entre 0.5 et 1.
 </details>
 
-### ⭐⭐ Mosaic
-
-![](output/mosaic.png)
-
-<details><summary>Indice</summary>
-You can use a modulo (`%`) somewhere.
-</details>
-
-#### ⭐⭐⭐ Mosaic flip
-
-Flip every other image:
-
-![](output/mosaic_flip.png)
+### Vous pouvez implémenter vos propres effets !
