@@ -7,13 +7,13 @@ struct Histogram {
 
 Histogram compute_histogram(sil::Image const& image)
 {
-    Histogram histogram{1.f, 0.f}; // Init with values
+    Histogram histogram{1.f, 0.f}; // Init with values that are too big / small to be the real min / max
     for (int x{0}; x < image.width(); x++)
     {
         for (int y{0}; y < image.height(); y++)
         {
-            glm::vec3 const color    = image.pixel(x, y);
-            float const     grey     = 0.299f * color.r + 0.587f * color.g + 0.114f * color.b;
+            glm::vec3 const color{image.pixel(x, y)};
+            float const     grey{0.299f * color.r + 0.587f * color.g + 0.114f * color.b};
             histogram.min_luminosity = std::min(histogram.min_luminosity, grey);
             histogram.max_luminosity = std::max(histogram.max_luminosity, grey);
         }
@@ -23,7 +23,7 @@ Histogram compute_histogram(sil::Image const& image)
 
 void normalize_histogram(sil::Image& image)
 {
-    Histogram const histogram = compute_histogram(image);
+    Histogram const histogram{compute_histogram(image)};
     for (int x{0}; x < image.width(); x++)
     {
         for (int y{0}; y < image.height(); y++)

@@ -1,6 +1,8 @@
 #include "Convolutions.hpp"
 
 struct Kernel {
+    std::vector<std::vector<float>> values;
+
     Kernel(int width, int height)
     {
         values.resize(width);
@@ -12,8 +14,6 @@ struct Kernel {
         : values{kernel}
     {
     }
-
-    std::vector<std::vector<float>> values;
 
     int width() const
     {
@@ -37,15 +37,6 @@ struct Kernel {
     }
 };
 
-int clamp(int x, int min, int max)
-{
-    if (x < min)
-        return min;
-    if (x > max)
-        return max;
-    return x;
-}
-
 static void apply_kernel(sil::Image& image, Kernel const& kernel)
 {
     sil::Image result{image.width(), image.height()};
@@ -58,8 +49,8 @@ static void apply_kernel(sil::Image& image, Kernel const& kernel)
             {
                 for (int yk{0}; yk < kernel.height(); yk++)
                 {
-                    int const xx = clamp(x + xk - kernel.width() / 2, 0, image.width() - 1);
-                    int const yy = clamp(y + yk - kernel.height() / 2, 0, image.height() - 1);
+                    int const xx{std::clamp(x + xk - kernel.width() / 2, 0, image.width() - 1)};
+                    int const yy{std::clamp(y + yk - kernel.height() / 2, 0, image.height() - 1)};
                     value += image.pixel(xx, yy) * kernel.at(xk, yk);
                 }
             }

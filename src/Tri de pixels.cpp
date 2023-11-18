@@ -2,6 +2,11 @@
 #include <algorithm>
 #include "random.hpp"
 
+float brightness(glm::vec3 const& color)
+{
+    return 0.299f * color.r + 0.587f * color.g + 0.114f * color.b;
+}
+
 void pixel_sorting(sil::Image& image)
 {
     int const group_length{101};
@@ -15,9 +20,8 @@ void pixel_sorting(sil::Image& image)
             (i + 1) * group_length,
             static_cast<int>(image.pixels().size())
         )};
-        std::sort(image.pixels().begin() + begin, image.pixels().begin() + end, [](glm::vec3 col1, glm::vec3 col2) {
-            glm::vec3 const channel_brightness{1.f / 3.f};
-            return glm::dot(col1, channel_brightness) < glm::dot(col2, channel_brightness);
+        std::sort(image.pixels().begin() + begin, image.pixels().begin() + end, [](glm::vec3 const& col1, glm::vec3 const& col2) {
+            return brightness(col1) < brightness(col2);
         });
     }
 }

@@ -9,13 +9,13 @@ sil::Image mandelbrot()
         for (int yi{0}; yi < image.height(); yi++)
         {
             std::complex<float> const c{
-                static_cast<float>(xi) / (image.width() - 1) * 3.f - 2.f,
-                static_cast<float>(yi) / (image.height() - 1) * 3.f - 1.5f,
+                static_cast<float>(xi) / (image.width() - 1) * 3.f - 2.f,   // Map x between -2 and 1
+                static_cast<float>(yi) / (image.height() - 1) * 3.f - 1.5f, // Map y between -1.5 and 1.5
             };
             std::complex<float> z{0.f};
 
-            int                  iterations{0};
-            static constexpr int max_iterations{30};
+            int       iterations{0};
+            int const max_iterations{30};
             while (iterations < max_iterations && std::abs(z) < 2.f)
             {
                 z = z * z + c;

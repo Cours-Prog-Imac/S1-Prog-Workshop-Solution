@@ -49,7 +49,7 @@ void k_means(sil::Image& image, int nb_colors)
         mean = image.pixels()[random_int(0, image.pixels().size())];
     }
     // Iterate k-means process
-    for (int i = 0; i < 10; ++i) // 10 is an empiric number that gives good quality and good performance
+    for (int i = 0; i < 10; ++i) // 10 is an empirical number that gives good quality and good performance
     {
         means = find_new_means(image, means);
     }

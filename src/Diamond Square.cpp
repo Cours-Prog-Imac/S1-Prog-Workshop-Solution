@@ -47,7 +47,7 @@ void diamond_square(sil::Image& image)
             for (int y{(x + half) % chunk_size}; y < image.height(); y += chunk_size)
             {
                 int        count{0};
-                auto const try_count_neighbor = [&](int xx, int yy) {
+                auto const try_count_neighbor = [&](int xx, int yy) { // Define a function in the middle of the code (a.k.a. a lambda). It's nice because it has access to the values around it, like `count`
                     if (0 <= xx && xx < image.width() &&
                         0 <= yy && yy < image.height())
                     {
@@ -68,7 +68,7 @@ void diamond_square(sil::Image& image)
     }
 }
 
-glm::vec3 threshold(glm::vec3 const& color)
+glm::vec3 limit_to_N_possible_values(glm::vec3 const& color)
 {
     float const N{12};
     return glm::floor(color * N) / N;
@@ -83,7 +83,7 @@ void colorize_heightmap(sil::Image& image)
 {
     for (glm::vec3& color : image.pixels())
     {
-        color = threshold(color);
+        color = limit_to_N_possible_values(color);
         if (color.r < 0.5f)
             color = glm::mix(DARK_BLUE, LIGHT_BLUE, color.r * 2.f);
         else
