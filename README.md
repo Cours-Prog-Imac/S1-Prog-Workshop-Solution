@@ -178,8 +178,8 @@ Présentez un des algos avancés que vous avez fait, en 5-10 minutes. C'est de l
 ### Conseils
 
 - Nous utiliserons la librairie *sil* pour lire, éditer et sauvegarder les images. Elle est très simple à utiliser et n'expose que le minimum nécessaire. Vous pouvez trouver sa documentation [sur GitHub](https://github.com/JulesFouchy/Simple-Image-Lib/tree/main#usage).
-- Utilisez des images relativement petites (500x500 max), pour que le rendu soit quasi-instantané. Au moins pendant que vous faites vos tests.
-- Vous pouvez afficher l'image de sortir à côté dans VSCode pour facilement voir le résultat:
+- Utilisez des images relativement petites (500x500 max), pour que le rendu soit quasi-instantané. Au moins pendant que vous faites vos tests. Vous avez déjà `"images/logo.png"` et `"images/photo.jpg"` dispo dans le template de projet. Certains effets marchent mieux sur une photo, et d'autres mieux sur une image flat, donc choisissez en fonction de l'effet sur quelle image l'appliquer. Vous pouvez aussi mettre vos propres images si vous voulez.
+- Vous pouvez afficher l'image de sortie à côté dans VSCode pour facilement voir le résultat en même temps que vous codez :
 ![Alt text](image.png)
 
 ### ⭐ Ne garder que le vert
