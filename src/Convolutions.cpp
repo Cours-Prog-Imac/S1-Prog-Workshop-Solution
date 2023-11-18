@@ -1,4 +1,5 @@
 #include "Convolutions.hpp"
+#include <algorithm>
 
 struct Kernel {
     std::vector<std::vector<float>> values;
