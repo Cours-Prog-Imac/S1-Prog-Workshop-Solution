@@ -26,8 +26,8 @@
   - [Exercices à faire](#exercices-à-faire)
   - [Rapport](#rapport)
   - [Soutenance](#soutenance)
-  - [Détails techniques](#détails-techniques)
 - [💻 Exercices](#-exercices)
+  - [Conseils](#conseils)
   - [⭐ Ne garder que le vert](#-ne-garder-que-le-vert)
   - [⭐ Échanger les canaux](#-échanger-les-canaux)
   - [⭐ Noir \& Blanc](#-noir--blanc)
@@ -67,10 +67,10 @@
 
 - [ ] Présentation de moi
 - [ ] Présentation du projet
-  - [ ] C'est quoi le sujet? -> faire des effets sur les images, comme on peut en trouver dans photoshop etc, filtre insta etc
-  - [ ] Par groupe de 2, et 1 groupe de 3 si impair. Mais je veux que vous fassiez chacun des exercices de votre côté autant que possible, et que vous vous entraidiez au besoin. + pour l'exercice 3+ faites le à deux
-  - [ ] Evaluation: min 1 exo de niveau 3 ou +, et autant du reste que possible. Montrez moi juste que vous êtes investies, 4h d'autonomie par jour c'est très bien. Posez un max de question, quand vous êtes bloquées et/ou par curiosité.
-  - [ ] Je vous encourage à dans un premier temps essayer de faire chaque exercice sans regarder les indices, ni chercher sur internet / ChatGPT. Essayez de résoudre le problème par vous-même, ça aide à mieux le comprendre, puis apprécier et retenir la solution. + si vous réussissez seul.e, giga satisfaction. Les exos sont "faciles", c'est fait pour. Bien sûr que ChatGPT peut les résoudre, mais vous n'apprendrez rien si vous n'essayez pas par vous même. Et plutôt que ChatGPT, demandez moi en premier si possible, je pourrai mieux vous aiguiller / expliquez juste comme il faut pour que vous appreniez un max. Ou sinon demandez à vos camarades en deuxième solution (+ c'est un bon exercice d'expliquer donc vous rendez service à la fois à vous-même et à elleux)   
+  - [ ] C'est quoi le sujet? -> faire des effets sur les images, comme on peut en trouver dans photoshop, filtre insta etc
+  - [ ] Par groupe de 2, et 1 groupe de 3 si impair. Mais je veux que vous fassiez chacun des exercices de votre côté autant que possible, et que vous vous entraidiez au besoin. À partir des exercice de niveau 3 ou + vous pouvez bosser à deux dessus dès le début.
+  - [ ] Évaluation: min 1 exo de niveau 3 ou +, et autant du reste que possible. Montrez moi juste que vous êtes investies, 4h d'autonomie par jour c'est très bien. Posez un max de question, quand vous êtes bloquées et/ou par curiosité.
+  - [ ] Je vous encourage à dans un premier temps essayer de faire chaque exercice sans regarder les indices, ni chercher sur internet / ChatGPT. Essayez de résoudre le problème par vous-même, ça aide à mieux le comprendre, puis apprécier et retenir la solution. + si vous réussissez seul.e, giga satisfaction. Les exos sont "faciles", c'est fait pour. Bien sûr que ChatGPT peut les résoudre, mais vous n'apprendrez rien si vous n'essayez pas par vous même. Et plutôt que ChatGPT, demandez moi en premier si possible, je pourrai mieux vous aiguiller / expliquer juste comme il faut pour que vous appreniez un max. Ou sinon demandez à vos camarades en deuxième solution (+ c'est un bon exercice d'expliquer donc vous rendez service à la fois à vous-même et à elleux)   
 - [ ] Présentation de la lib
   - [ ] Parler de la représentation des couleurs en vec3 avec des valeurs de 0 à 1
   - [ ] Mentionner que pour faire les choses bien il ne faudrait pas travailler en sRGB mais dans un espace perceptuellement correct (CIELab, Oklab)
@@ -78,7 +78,7 @@
 
 #### Élève
 
-- [ ] Création du groupe : binôme obligatoirement (et 1 trinôme dans la classe si impair) mais je veux que vous fassiez chacun des exercices de votre côté autant que possible, et que vous vous entraidiez au besoin. + pour l'exercice 3+ faites le à deux
+- [ ] Création du groupe : binôme obligatoirement (et 1 trinôme dans la classe si impair) mais je veux que vous fassiez chacun des exercices de votre côté autant que possible, et que vous vous entraidiez au besoin. À partir des exercice de niveau 3 ou + vous pouvez bosser à deux dessus dès le début.
 - [ ] Prise en main de la lib
 - [ ] Quelques exercices de niveau 1 (⭐) et/ou 2 (⭐⭐)
 
@@ -100,8 +100,7 @@
 
 ##### Prof 13h45-17h (pause 15h15-15h30)
 
-- [ ] Présentation des algos avancés (niveau 3 ou plus ⭐⭐⭐)
-- [ ] Conseil : faites un fichier à part pour votre algo avancé, car il y aura probablement plusieurs fonctions intermédiaires à écrire, et peut-être des structs aussi.
+- [ ] Lancement des algos avancés (niveau 3 ou plus ⭐⭐⭐), accompagnement, conseils
 
 ##### Élève
 
@@ -162,28 +161,25 @@ Faites un maximum de chose, et au minimum un exercice de niveau 3 ou plus (⭐�
 
 ### Rapport
 
-A faire en Markdown obligatoirement (si vous ne connaissez pas c'est l'occasion de découvrir, c'est super utile).
+À faire en Markdown obligatoirement (si vous ne connaissez pas c'est l'occasion de découvrir, c'est super utile).
 
-A mettre directement en tant que readme à la racine du repo.
+À mettre directement en tant que ReadMe à la racine du repo.
 
-Faite une section par exercice que vous avez fait. Montrez une image avant et après application de l'effet (comme c'est fait dans l'énoncé des exercices). Si vous jugez cela utile, vous pouvez mettre un petit texte expliquant des spécificités de l'algo que vous avez implémenté. (C'est surtout intéressant si vous avez fait des algos qui ne sont pas listés dans le sujet, et pour votre algo 3+).
+Faites une section par exercice que vous avez fait. Montrez une image avant et après application de l'effet (comme c'est fait dans l'énoncé des exercices). Si vous jugez cela utile, vous pouvez mettre un petit texte expliquant des spécificités de l'algo que vous avez implémenté. (C'est surtout intéressant si vous avez fait des algos qui ne sont pas listés dans le sujet, et pour vos algo 3+).
 
 Mettez un lien vers votre git au début du rapport.
 
 ### Soutenance
 
-Présentez un des algos avancés que vous avez fait, en 5 minutes. C'est de la vulgarisation, il faut que tous vos camarades puissent comprendre, au moins dans les grandes lignes.
-
-> Est-ce que c'est utile ? Ca prend pas mal de temps. Mais de l'autre côté c'est un bon exercice qui force à avoir bien compris l'algo, et ça permet aux autres de voir les algos qu'iels n'ont pas implémenté. Ou sinon, je demande juste aux groupes les plus chauds de faire une présentation, comme ça c'est pas trop long, et on voit juste une fois chaque algo. Et on peut prendre + de temps pour chaque présentation (même pas besoin de limiter le temps, iels font comme bon leur semble).
-
-### Détails techniques
-
-Nous utiliserons la librairie *sil* pour lire, éditer et re-sauvegarder les images. Elle est très simple à utiliser et n'expose que le minimum nécessaire. Vous pouvez trouver sa documentation [sur GitHub](https://github.com/JulesFouchy/Simple-Image-Lib/tree/main#usage).
+Présentez un des algos avancés que vous avez fait, en 5-10 minutes. C'est de la vulgarisation, il faut que tous vos camarades puissent comprendre, au moins dans les grandes lignes.
 
 ## 💻 Exercices
 
-- Leur dire de travailler sur une image pas trop grande, pour que le rendu soit quasi-instantané. (Par exemple l'image par défaut fournie dans le projet est très bien. Mais il faut leur fournir aussi une photo, certains effets ne marchent pas bien sur une image en flat design).
-- Leur dire d'afficher l'image output à côté dans VSCode pour facilement voir le résultat
+### Conseils
+
+- Nous utiliserons la librairie *sil* pour lire, éditer et sauvegarder les images. Elle est très simple à utiliser et n'expose que le minimum nécessaire. Vous pouvez trouver sa documentation [sur GitHub](https://github.com/JulesFouchy/Simple-Image-Lib/tree/main#usage).
+- Utilisez des images relativement petites (500x500 max), pour que le rendu soit quasi-instantané. Au moins pendant que vous faites vos tests.
+- Vous pouvez afficher l'image de sortir à côté dans VSCode pour facilement voir le résultat:
 ![Alt text](image.png)
 
 ### ⭐ Ne garder que le vert
