@@ -2,9 +2,9 @@
 #include <algorithm>
 #include "glm/gtx/matrix_transform_2d.hpp"
 
-glm::vec2 rotated(glm::vec2 v, float angle)
+glm::vec2 rotated(glm::vec2 point, glm::vec2 center_of_rotation, float angle)
 {
-    return glm::vec2{glm::rotate(glm::mat3{1.f}, angle) * glm::vec3{v, 0.f}};
+    return glm::vec2{glm::rotate(glm::mat3{1.f}, angle) * glm::vec3{point - center_of_rotation, 0.f}} + center_of_rotation;
 }
 
 void vortex(sil::Image& image)
@@ -17,7 +17,7 @@ void vortex(sil::Image& image)
             glm::vec2 const position{x, y};
             glm::vec2 const center{image.width() / 2, image.height() / 2};
             float const     rotation{glm::distance(position, center) * 0.1f};
-            glm::vec2 const new_position{center + rotated(position - center, rotation)};
+            glm::vec2 const new_position{rotated(position, center, rotation)};
             result.pixel(x, y) = image.pixel(
                 std::clamp(static_cast<int>(new_position.x), 0, image.width() - 1),
                 std::clamp(static_cast<int>(new_position.y), 0, image.height() - 1)
