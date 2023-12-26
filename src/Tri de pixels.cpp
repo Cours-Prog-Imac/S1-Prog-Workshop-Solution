@@ -13,7 +13,7 @@ void pixel_sorting(sil::Image& image)
 
     for (int i = 0; i < image.pixels().size() / group_length; ++i)
     {
-        if (random_float(0.f, 1.f) < 0.7f)
+        if (true_with_probability(0.7f))
             continue;
         int const begin{i * group_length};
         int const end{std::min(
