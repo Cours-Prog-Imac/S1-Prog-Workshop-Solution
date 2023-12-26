@@ -22,3 +22,7 @@ Est-ce qu'on veut la garder ? C'est relativement utile, mais aussi c'est du temp
 ## Maths
 
 Une bonne partie de la difficulté du workshop réside dans les maths. Ce n'est pas forcément ce qu'on veut. Mais en même temps ça fait apprendre des notions utiles pour la synthèse d'image à celleux qui ne maîtrisent pas encore ces notions. Donc ce n'est pas forcément une mauvaise chose.
+
+## Ajouter des effets animés ?
+
+Ca peut être sympa, et pas trop difficile. On leur dit d'exporter plein de frames et des les assembler dans ShutterEncoder ou AfterEffects.

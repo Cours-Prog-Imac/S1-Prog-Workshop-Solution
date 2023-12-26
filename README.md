@@ -24,10 +24,6 @@
       - [Prof](#prof-1)
       - [Élève](#élève-5)
     - [Aprèm 13h45-17h (pause 15h15-15h30)](#aprèm-13h45-17h-pause-15h15-15h30)
-- [📝 Sujet](#-sujet)
-  - [Exercices à faire](#exercices-à-faire)
-  - [Rapport](#rapport)
-  - [Soutenance](#soutenance)
 
 ## 📅 Planning
 
@@ -126,3 +122,6 @@
 #### Aprèm 13h45-17h (pause 15h15-15h30)
 
 - [ ] Présentations
+
+Améliorations pour l'année prochaine : 
+- demander le rendu du rapport le dimanche à 9h, comme ça après je peux passer la correction et iels ont le dimanche pour la regarder tranquillement avant de rattaquer une semaine de cours et d'oublier le workshop.
