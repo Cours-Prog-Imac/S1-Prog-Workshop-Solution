@@ -1,5 +1,7 @@
 #include <iostream>
+#include "Animation.hpp"
 #include "Convolutions.hpp"
+#include "Degrade Lab.hpp"
 #include "Degrade.hpp"
 #include "Diamond Square.hpp"
 #include "Disque.hpp"
@@ -175,6 +177,11 @@ int main()
         image.save("output/pixel_sorting.png");
     }
     {
+        sil::Image image{300, 200};
+        gradient_lab(image);
+        image.save("output/gradient_lab.png");
+    }
+    {
         sil::Image image{"images/photo.jpg"};
         image = kuwahara(image, 10);
         image.save("output/kuwahara.jpg");
@@ -202,4 +209,5 @@ int main()
         colorize_heightmap(image);
         image.save("output/diamond_square_colored.png");
     }
+    animation();
 }
